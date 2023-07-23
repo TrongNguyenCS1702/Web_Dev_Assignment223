@@ -13,11 +13,7 @@
   <title>Ivy</title>
 </head>
 <body>
-    <section id="Slider">
-        <div class="slider-container">
-            
-        </div>
-    </section>
+    
     <script src="home.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
 </body>
