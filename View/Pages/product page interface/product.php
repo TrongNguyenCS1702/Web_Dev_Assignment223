@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
   <link rel="stylesheet" href="product.css">
   <link rel="stylesheet" href="../../Component/header/header.css">
-  <link rel="stylesheet" href="../../Component/footer/footer.css">
   <script src="product.js"></script>
   <title>Ivy</title>
 </head>
@@ -17,7 +16,6 @@
 <!-- Body-->
   <div class="container">abcd</div>
 <!-- Footer-->
-  <?php include '../../Component/footer/footer.php';?>
   <script src="product.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
 </body>

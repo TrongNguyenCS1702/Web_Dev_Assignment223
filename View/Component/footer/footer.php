@@ -33,7 +33,7 @@
             <p><strong>Email:</strong>cskh@ivy.com.vn</p>
           </div>
           <ul class="list-social">
-            <li><a href=""><img src="img/fb.svg" alt="" style="width:12px; height:24px;"></a></li>
+            <li><a href=""><img src="Web_Dev_Assignment223/View/" alt="" style="width:12px; height:24px;"></a></li>
             <li><a href=""><img src="img/ic_gg.svg" alt="" style="width:22px; height:22px;"></a></li>
             <li><a href=""><img src="img/ic_instagram.svg" alt="" style="width:30px; height:30px;"></a></li>
             <li><a href=""><img src="img/ic_pinterest.svg" alt="" style="width:27px; height:27px;"></a></li>
