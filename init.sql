@@ -68,3 +68,47 @@ CREATE TABLE PurchaseHistory (
   FOREIGN KEY (user_id) REFERENCES Users(id),
   FOREIGN KEY (figure_id) REFERENCES Figures(id)
 );
+
+-- Insert sample data for Users table
+INSERT INTO Users (username, password, email, role)
+VALUES ('trong', 'admin', 'trong@example.com', 'admin'),
+      ('duong', 'admin', 'duong@example.com', 'admin'),
+      ('cuong', 'admin', 'cuong@example.com', 'admin'),
+      ('anh', 'admin', 'anh@example.com', 'admin'),
+      ('john_doe', '12345', 'john@example.com', 'user'),
+      ('jane_doe', '54321', 'jane@example.com', 'user'),
+      ('test_user1', 'test123', 'test1@example.com', 'user'),
+      ('test_user2', 'test456', 'test2@example.com', 'user'),
+      ('test_user3', 'test789', 'test3@example.com', 'user'),
+      ('test_user4', 'testabc', 'test4@example.com', 'user');
+
+
+INSERT INTO Figures (name, description, price, quantity, image_url)
+VALUES ('Figure A', 'This is Figure A description', 25.99, 10, 'https://example.com/figureA.jpg'),
+      ('Figure B', 'This is Figure B description', 19.99, 5, 'https://example.com/figureB.jpg'),
+      ('Figure C', 'This is Figure C description', 34.99, 8, 'https://example.com/figureC.jpg'),
+      ('Figure D', 'This is Figure D description', 12.99, 15, 'https://example.com/figureD.jpg');
+
+INSERT INTO Vouchers (code, discount, start_date, end_date)
+VALUES ('SUMMER20', 20.00, '2023-06-01', '2023-08-31'),
+      ('SALE50', 50.00, '2023-07-15', '2023-07-31');
+
+INSERT INTO ShoppingCarts (user_id)
+VALUES (5), (6);
+
+INSERT INTO ShoppingCartItems (cart_id, figure_id, quantity)
+VALUES (1, 1, 2), (1, 2, 3), (1, 3, 1),
+      (2, 1, 1), (2, 3, 2);
+
+INSERT INTO Orders (user_id, voucher_code)
+VALUES (5, 'SUMMER20'), (6, 'SALE50');
+
+
+INSERT INTO OrderItems (order_id, figure_id, quantity, rating)
+VALUES (1, 1, 2, 4), (1, 3, 1, 5),
+      (2, 2, 3, 5), (2, 4, 1, 4);
+
+
+INSERT INTO PurchaseHistory (user_id, figure_id, purchase_date)
+VALUES (5, 1, '2023-07-20'), (5, 3, '2023-07-20'),
+      (6, 2, '2023-07-25'), (6, 4, '2023-07-25');
