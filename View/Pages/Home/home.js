@@ -1,3 +1,5 @@
+
+//home
 const images = document.querySelectorAll('.aspect-ratio-169 img');
 const dots = document.querySelectorAll('.dots-container .dot');
 let currentIndex = 0;

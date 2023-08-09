@@ -54,11 +54,12 @@ header {
     position: absolute;
     width: 700px;
     padding: 10px 0 10px 20px;
-    border: 1px solid #000;
+    border: 0.1px solid #5a5a5a;
     visibility: hidden;
     display: flex;
     top: 50px;
     transition: 0.3s;
+    background-color: #f8f9fa;
 }
 .menu li:hover .sub-menu {
     visibility: visible;
@@ -87,8 +88,8 @@ header {
 .submit {
     position: absolute;
     right: 5px; /* Điều chỉnh vị trí của nút tìm kiếm so với ô nhập liệu */
-    top: 50%; /* Đưa nút tìm kiếm lên giữa theo chiều dọc */
-    transform: translateY(-50%); /* Đưa nút tìm kiếm lên giữa theo chiều dọc */
+    top: 60%; /* Đưa nút tìm kiếm lên giữa theo chiều dọc */
+    transform: translateY(-70%); /* Đưa nút tìm kiếm lên giữa theo chiều dọc */
     border: none;
     background-color: #f8f9fa;
 }
@@ -101,9 +102,9 @@ header {
 </head>
 <body>
   <div class="container">
-    <header>  
+    <header id="header">  
       <div class="logo">
-        <img src="/View/Component/images/logo.png" alt="logo">
+        <a href="/View/Pages/Home/home.php"><img src="/View/Component/images/logo.png" alt="logo"></a>
       </div>
       <div class="menu">
         <li><a href="#">NỮ</a>
@@ -173,7 +174,7 @@ header {
           <a class="icon" href="#"><i class="fas fa-headphones-alt"></i></a>
         </div>
         <div class="item wallet">
-          <a class="icon" href="#"><i class="fas fa-user"></i></a>
+          <a class="icon" href="/View/Pages/Login/login.php"><i class="fas fa-user"></i></a>
         </div>
         <div class="item wallet">
           <a class="icon" href="#"><i class="fas fa-shopping-bag"></i></a>
@@ -182,5 +183,6 @@ header {
     </header>
   </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+    <script src="/View/Component/header/header.js"></script>
 </body>
 </html>
