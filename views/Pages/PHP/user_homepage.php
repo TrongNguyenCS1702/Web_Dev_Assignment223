@@ -1,4 +1,4 @@
-<?php include '../../Component/header/header.php';?>
+<!-- <?php include '../../Component/header/header.php';?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,4 +21,4 @@
     <script src="home.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+</html> -->

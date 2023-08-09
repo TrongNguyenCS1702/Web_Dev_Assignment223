@@ -23,21 +23,31 @@ class ProductModel
         return $this->db->execute($sql, $params);
     }
 
-    // Function to update a product
-    public function updateProduct($productId, $name, $description, $price, $quantity, $imageUrl)
+    public function getAllProducts()
     {
-        $sql = "UPDATE Figures 
-                SET name = ?, description = ?, price = ?, quantity = ?, image_url = ?
-                WHERE id = ?";
-        $params = array($name, $description, $price, $quantity, $imageUrl, $productId);
-        return $this->db->execute($sql, $params);
+        $query = "SELECT * FROM Figures";
+        $products = $this->db->fetchAll($query);
+        return $products;
     }
 
-    // Function to get a product by ID
-    public function getProductById($productId)
+    public function getProductById($product_id)
     {
-        $sql = "SELECT * FROM Figures WHERE id = ?";
-        $params = array($productId);
-        return $this->db->fetchSingle($sql, $params);
+        $query = "SELECT * FROM Figures WHERE id = ?";
+        $product = $this->db->fetchSingle($query, [$product_id]);
+        return $product;
     }
+
+    public function updateProduct($product_id, $name, $description, $price, $quantity, $image_url)
+    {
+        $query = "UPDATE Figures SET name = ?, description = ?, price = ?, quantity = ?, image_url = ? WHERE id = ?";
+        $params = [$name, $description, $price, $quantity, $image_url, $product_id];
+        return $this->db->execute($query, $params);
+    }
+
+    public function deleteProduct($product_id)
+{
+    // Delete the product from the Figures table
+    $query = "DELETE FROM Figures WHERE id = ?";
+    return $this->db->execute($query, [$product_id]);
+}
 }

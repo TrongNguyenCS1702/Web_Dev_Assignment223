@@ -1,9 +1,8 @@
 <?php
-// models/PurchaseHistoryModel.php
 
 require_once 'config/Database.php';
 
-class PurchaseHistoryModel
+class ShoppingCartItemsModel
 {
     private $db;
 
@@ -11,10 +10,10 @@ class PurchaseHistoryModel
     {
         $this->db = new Database();
     }
-    
-    public function deletePurchaseHistoryByUserId($user_id)
+
+    public function deleteShoppingCartItemsByUserId($user_id)
     {
-        $query = "DELETE FROM PurchaseHistory WHERE user_id = ?";
+        $query = "DELETE FROM ShoppingCartItems WHERE cart_id IN (SELECT id FROM ShoppingCarts WHERE user_id = ?)";
         $params = [$user_id];
         return $this->db->execute($query, $params);
     }

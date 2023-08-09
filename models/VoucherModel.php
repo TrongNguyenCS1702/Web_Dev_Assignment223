@@ -6,33 +6,58 @@ require_once 'config/Database.php';
 
 class VoucherModel
 {
-    // ... (existing functions)
+    private $db;
+
+    public function __construct()
+    {
+        // Create a new Database object to establish the connection
+        $this->db = new Database();
+    }
+
+    public function addVoucher($code, $discount, $startDate, $endDate)
+    {
+        $query = "INSERT INTO Vouchers (code, discount, start_date, end_date) VALUES (?, ?, ?, ?)";
+        $params = [$code, $discount, $startDate, $endDate];
+        return $this->db->execute($query, $params);
+    }
 
     // Function to update a voucher
-    public function updateVoucher($voucherId, $code, $discount, $startDate, $endDate)
+    public function editVoucher($voucher_id, $newCode, $newDiscount, $newStartDate, $newEndDate)
     {
-        // ... (add code to update the voucher in the database)
+        $query = "UPDATE Vouchers SET code = ?, discount = ?, start_date = ?, end_date = ? WHERE id = ?";
+        $params = [$newCode, $newDiscount, $newStartDate, $newEndDate, $voucher_id];
+        return $this->db->execute($query, $params);
     }
 
     // Function to delete a voucher
-    public function deleteVoucher($voucherId)
+    public function deleteVoucher($voucher_id)
     {
-        // ... (add code to delete the voucher from the database)
+        $query = "DELETE FROM Vouchers WHERE id = ?";
+        $params = [$voucher_id];
+        return $this->db->execute($query, $params);
     }
 
     // Function to get all vouchers
     public function getAllVouchers()
     {
-        // ... (add code to fetch all vouchers from the database)
+
+        $query = "SELECT * FROM Vouchers";
+        $vouchers = $this->db->fetchAll($query);
+
+        return $vouchers;
     }
 
-    public function insertVoucher($code, $discount, $startDate, $endDate)
+    public function updateVoucher($voucher_id, $newCode, $newDiscount, $newStartDate, $newEndDate)
     {
-        // ... (add code to update the voucher in the database)
+        $query = "UPDATE Vouchers SET code = ?, discount = ?, start_date = ?, end_date = ? WHERE id = ?";
+        $params = [$newCode, $newDiscount, $newStartDate, $newEndDate, $voucher_id];
+        return $this->db->execute($query, $params);
     }
 
-    public function getVoucherById($voucherId)
+    public function getVoucherById($voucher_id)
     {
-        // ... (add code to fetch all vouchers from the database)
+        $query = "SELECT * FROM Vouchers WHERE id = ?";
+        $params = [$voucher_id];
+        return $this->db->fetchSingle($query, $params);
     }
 }

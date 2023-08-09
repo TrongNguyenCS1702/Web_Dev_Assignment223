@@ -15,47 +15,222 @@ $action = isset($_GET['action']) ? $_GET['action'] : '';
 $userController = new UserController();
 $adminController = new AdminController();
 
+// If the user is already logged in, redirect to the appropriate page
 if (isset($_SESSION['user_role'])) {
     if ($_SESSION['user_role'] === 'admin') {
-        header("Location: {$base_url}/index.php?action=admin_homepage");
+        if ($action === 'admin_homepage') {
+            // Admin homepage: Display admin information and options
+            include 'views/Pages/PHP/admin_homepage.php';
+            exit; // Add this line to stop further processing
+        } elseif ($action === 'add_product') {
+            // Add product page
+            // Add your add product logic here
+        } elseif ($action === 'update_product') {
+            // Update product page
+            // Add your update product logic here
+        } elseif ($action === 'view_user') {
+            // Include the view_users.php file here
+            include 'views/Pages/PHP/view_users.php';
+            exit; // Add this line to stop further processing
+        } elseif ($action === 'edit_user') {
+            $user_id = isset($_GET['id']) ? $_GET['id'] : null;
+            if ($user_id) {
+                $user = $adminController->getUserById($user_id);
+                if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
+                    $newUsername = $_POST['username'];
+                    $newEmail = $_POST['email'];
+                    $newPassword = $_POST['password']; // Get new password from form
+        
+                    $update_result = $adminController->editUser($user_id, $newUsername, $newEmail, $newPassword);
+        
+                    if ($update_result) {
+                        $update_message = "User information updated successfully.";
+                    } else {
+                        $update_message = "Error updating user information.";
+                    }
+                }
+                include 'views/Pages/PHP/edit_user.php';
+                exit;
+            }
+        } elseif ($action === 'delete_user') {
+            $user_id = isset($_GET['id']) ? $_GET['id'] : null;
+            if ($user_id) {
+                $delete_result = $adminController->deleteUser($user_id);
+                if ($delete_result) {
+                    $delete_message = "Deleted user successfully.";
+                } else {
+                    $delete_message = "Error deleting user.";
+                }
+            }
+            $users = $adminController->getAllUsers(); 
+            include 'views/Pages/PHP/view_users.php';
+            exit;
+        } elseif ($action === 'add_user') {
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $username = $_POST['username'];
+                $email = $_POST['email'];
+                $password = $_POST['password'];
+                $role = $_POST['role'];
+        
+                $add_result = $adminController->addUser($username, $email, $password, $role);
+        
+                if ($add_result) {
+                    $add_message = "User added successfully.";
+                } else {
+                    $add_message = "Error adding user.";
+                }
+            }
+        
+            include 'views/Pages/PHP/add_user.php';
+            exit;
+        }
+        elseif ($action === 'edit_product') {
+            $product_id = isset($_GET['id']) ? $_GET['id'] : null;
+            if ($product_id) {
+                $product = $adminController->getProductById($product_id);
+                if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
+                    $newName = $_POST['name'];
+                    $newDescription = $_POST['description'];
+                    $newPrice = $_POST['price'];
+                    $newQuantity = $_POST['quantity'];
+                    $newImageUrl = $_POST['image_url'];
+        
+                    $update_result = $adminController->editProduct($product_id, $newName, $newDescription, $newPrice, $newQuantity, $newImageUrl);
+        
+                    if ($update_result) {
+                        $update_message = "Product information updated successfully.";
+                    } else {
+                        $update_message = "Error updating product information.";
+                    }
+                }
+                include 'views/Pages/PHP/edit_product.php';
+                exit;
+            }
+        } elseif ($action === 'delete_product') {
+            $product_id = isset($_GET['id']) ? $_GET['id'] : null;
+            if ($product_id) {
+                $delete_result = $adminController->deleteProduct($product_id);
+                if ($delete_result) {
+                    $delete_message = "Deleted product successfully.";
+                } else {
+                    $delete_message = "Error deleting product.";
+                }
+            }
+        // Fetch the list of products
+        $products = $adminController->getAllProducts();
+        include 'views/Pages/PHP/view_products.php';
         exit;
+    } 
+    elseif ($action === 'view_products') {
+        $products = $adminController->getAllProducts();
+        include 'views/Pages/PHP/view_products.php';
+        exit;
+    } elseif ($action === 'delete_product') {
+        $product_id = isset($_GET['id']) ? $_GET['id'] : null;
+        if ($product_id) {
+            $delete_result = $adminController->deleteProduct($product_id);
+            if ($delete_result) {
+                $delete_message = "Deleted product successfully.";
+            } else {
+                $delete_message = "Error deleting product.";
+            }
+        }
+    // Fetch the list of products
+    $products = $adminController->getAllProducts();
+    include 'views/Pages/PHP/view_products.php';
+    exit;
+}elseif ($action === 'manage_vouchers') {
+        $vouchers = $adminController->getAllVouchers();
+        include 'views/Pages/PHP/view_vouchers.php';
+        exit;
+    } 
+    elseif ($action === 'add_voucher') {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_voucher'])) {
+            $code = $_POST['code'];
+            $discount = $_POST['discount'];
+            $startDate = $_POST['start_date'];
+            $endDate = $_POST['end_date'];
+    
+            $add_result = $adminController->addVoucher($code, $discount, $startDate, $endDate);
+    
+            if ($add_result) {
+                $add_message = "Voucher added successfully.";
+            } else {
+                $add_message = "Error adding voucher.";
+            }
+        }
+        include 'views/Pages/PHP/add_voucher.php';
+        exit;
+    }elseif ($action === 'view_vouchers') {
+        $vouchers = $adminController->getAllVouchers(); // Fetch vouchers from the controller
+        include 'views/Pages/PHP/view_vouchers.php';
+        exit;
+    }
+    elseif ($action === 'edit_voucher') {
+        $voucher_id = isset($_GET['id']) ? $_GET['id'] : null;
+        if ($voucher_id) {
+            $voucher = $adminController->getVoucherById($voucher_id);
+            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
+                $newCode = $_POST['code'];
+                $newDiscount = $_POST['discount'];
+                $newStartDate = $_POST['start_date'];
+                $newEndDate = $_POST['end_date'];
+    
+                $update_result = $adminController->editVoucher($voucher_id, $newCode, $newDiscount, $newStartDate, $newEndDate);
+    
+                if ($update_result) {
+                    $update_message = "Voucher information updated successfully.";
+                } else {
+                    $update_message = "Error updating voucher information.";
+                }
+            }
+            include 'views/Pages/PHP/edit_voucher.php';
+            exit;
+        }
+    }
+    elseif ($action === 'delete_voucher') {
+        $voucher_id = isset($_GET['id']) ? $_GET['id'] : null;
+        if ($voucher_id) {
+            $delete_result = $adminController->deleteVoucher($voucher_id);
+            if ($delete_result) {
+                $delete_message = "Deleted voucher successfully.";
+            } else {
+                $delete_message = "Error deleting voucher.";
+            }
+        }
+        // Fetch vouchers again from the controller
+        $vouchers = $adminController->getAllVouchers();
+        include 'views/Pages/PHP/view_vouchers.php';
+        exit;
+    }
+    elseif ($action === 'manage_orders') {
+        $orders = $adminController->getAllOrders();
+        include 'views/Pages/PHP/view_orders.php';
+        exit;
+    } elseif ($action === 'view_order_detail') {
+        $order_id = isset($_GET['id']) ? $_GET['id'] : null;
+        if ($order_id) {
+            $order = $adminController->getOrderById($order_id);
+            $orderItems = $adminController->getOrderItemsByOrderId($order_id);
+            include 'views/Pages/PHP/view_order_detail.php';
+            exit;
+        }
+    }
     } elseif ($_SESSION['user_role'] === 'user') {
-        header("Location: {$base_url}/index.php?action=user_homepage");
-        exit;
+        // Redirect to user homepage or other user-related actions
+        // Add your user-related logic here
     }
 }
 
-// Routing based on the action parameter and user role
+// Routing based on the action parameter
 if (empty($action) || $action === 'user_homepage') {
-    // User homepage: Show all products
-    $products = $userController->getAllProducts();
-    include 'views/Pages/PHP/user_homepage.php';
-} elseif ($action === 'view_shopping_cart') {
-    // View shopping cart
-    $cartItems = $userController->getShoppingCartItems();
-    include 'views/Pages/PHP/view_shopping_cart.php';
-} elseif ($action === 'view_order_history') {
-    // View order history
-    $orders = $userController->getOrderHistory();
-    include 'views/Pages/PHP/view_order_history.php';
-} elseif ($action === 'admin_homepage') {
-    // Admin login page
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Handle the admin login form submission
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $result = $userController->loginUser($username, $password);
-        echo $result; // Echo the login result (you can redirect to admin_homepage if login is successful)
-    } else {
-        // Show the admin login form
-        include 'views/Pages/PHP/admin_login.php';
-    }
+    // ... (User-related actions)
 } elseif ($action === 'user_login') {
-    // User login page
-    include 'views/Pages/PHP/user_login.php';
+    // ... (User login handling)
+} elseif ($action === 'user_register') {
+    // ... (User registration handling)
 } elseif ($action === 'admin_login') {
-    // Admin login page
-    include 'views/Pages/PHP/admin_login.php';
+    include 'views/Pages/PHP/admin_login.php'; // Display admin login page
 } else {
     // If the requested action is not found, show a 404 page
     header("HTTP/1.0 404 Not Found");
