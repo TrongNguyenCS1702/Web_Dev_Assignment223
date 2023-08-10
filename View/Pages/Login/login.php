@@ -86,93 +86,93 @@
       <div class="center-footer d-flex">
         <div class="left-center-ft item-center-ft">
           <p class="title-footer">Giới thiệu</p>
-					<ul>
+          <ul>
             <li>
               <a href="https://ivymoda.com/about/gioi-thieu">Về IVY moda</a>
-						</li>
-						<li>
+            </li>
+            <li>
               <a target="_blank" href="https://tuyendung.ivy.com.vn">Tuyển dụng</a>
-						</li>
-						<li>
+            </li>
+            <li>
               <a href="https://ivymoda.com/page/cuahang">Hệ thống cửa hàng</a>
-						</li>
-					</ul>
-				</div>
-				<div class="main-center-ft item-center-ft">
+            </li>
+          </ul>
+        </div>
+        <div class="main-center-ft item-center-ft">
           <p class="title-footer">Dịch vụ khách hàng</p>
-					<ul>
-						<li>
-							<a href="https://ivymoda.com/about/chinhsach-dieukhoan">Chính sách điều khoản</a>
-						</li>
-						<li>
+          <ul>
+            <li>
+              <a href="https://ivymoda.com/about/chinhsach-dieukhoan">Chính sách điều khoản</a>
+            </li>
+            <li>
               <a href="https://ivymoda.com/about/huong-dan-mua-hang">Hướng dẫn mua hàng</a>
-						</li>
-						<li>
+            </li>
+            <li>
               <a href="https://ivymoda.com/about/chinh-sach-thanh-toan">Chính sách thanh toán</a>
-						</li>
-						<li>
+            </li>
+            <li>
               <a href="https://ivymoda.com/about/chinh-sach-doi-tra">Chính sách đổi trả</a>
-						</li>
-						<li>
+            </li>
+            <li>
               <a href="https://ivymoda.com/about/chinh-sach-bao-hanh">Chính sách bảo hành</a>
-						</li>
-						<li>
+            </li>
+            <li>
               <a href="https://ivymoda.com/about/chinh-sach-giao-nhan-van-chuyen">Chính sách giao nhận vận chuyển</a>
-						</li>
-						<li>
+            </li>
+            <li>
               <a href="https://ivymoda.com/about/chinh-sach-the-thanh-vien">Chính sách thẻ thành viên</a>
-						</li>
-						<li>
+            </li>
+            <li>
               <a href="https://ivymoda.com/page/cuahang">Hệ thống cửa hàng</a>
-						</li>
-						<li>
+            </li>
+            <li>
               <a href="https://ivymoda.com/about/qa">Q&amp;A</a>
-						</li>
-					</ul>
-				</div>
-				<div class="right-center-ft item-center-ft">
+            </li>
+          </ul>
+        </div>
+        <div class="right-center-ft item-center-ft">
           <p class="title-footer">Liên hệ</p>
-					<ul>
+          <ul>
             <li>
               <a href="tel:02466623434">Hotline</a>
-						</li>
-						<li>
+            </li>
+            <li>
               <a href="mailto:saleadmin@ivy.com.vn">Email</a>
-						</li>
-						<li>
+            </li>
+            <li>
               <a href="javascript:openCsChatBox();">Live Chat</a>
-						</li>
-						<li>
+            </li>
+            <li>
               <a href="http://messenger.com/t/thoitrangivymoda" target="_blank">Messenger</a>
-						</li>
-						<li>
+            </li>
+            <li>
               <a href="https://ivymoda.com/lien-he">Liên hệ</a>
-						</li>
-					</ul>
-				</div>
-			</div>
+            </li>
+          </ul>
+        </div>
+      </div>
       <div class="right-footer">
         <div class="register-form">
           <p class="title-footer">Nhận thông tin các chương trình của IVY moda</p>
-					<form id="frm_subscribe">
+          <form id="frm_subscribe">
             <input id="email_subscribe" type="text" name="email" placeholder="Nhập địa chỉ email" required="required" style="border: 0; border-bottom: 1px solid #BCBDC0;">
-						<div class="btn-submit">
-							<input id="btn-submit" class="form-submit" value="Đăng ký" type="submit">
-						</div>
-					</form>
-				</div>
-				<div class="info-right-ft">
+            <div class="btn-submit">
+              <input id="btn-submit" class="form-submit" value="Đăng ký" type="submit">
+            </div>
+          </form>
+        </div>
+        <div class="info-right-ft">
           <p class="title-footer">Download App</p>
-					<ul>
+          <ul>
             <li>
               <a id="app_ios" href="http://ios.ivy.vn" class="link-white" target="_blank" title="Tải App IVYmoda trên App Store"> <img src="https://pubcdn.ivymoda.com/ivy2/images/appstore.png" class="img-fluid" alt=""> </a>
-						</li>
-						<li>
+            </li>
+            <li>
               <a id="app_android" href="http://android.ivy.vn" class="link-white" target="_blank" title="Tải App IVYmoda trên Google Play"> <img src="https://pubcdn.ivymoda.com/ivy2/images/googleplay.png" class="img-fluid" alt=""> </a>
-						</li>
-					</ul>
-				</div>
-			</div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
     </footer>
   </div>

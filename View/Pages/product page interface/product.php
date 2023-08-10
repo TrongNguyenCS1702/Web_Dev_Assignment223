@@ -24,7 +24,7 @@
           <li class="product-item">
             <a href="">Trang chủ</a>
             <i class="fas fa-arrow-right" style="padding: 10px 10px;"></i>
-        </li>
+          </li>
           <li class="product-item">
             <a href="">Nam</a>
             <i class="fas fa-arrow-right" style="padding: 10px 10px;"></i>
