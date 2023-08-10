@@ -111,7 +111,7 @@ header {
           <ul class="sub-menu">
             <li><a href="#">Áo</a>
               <ul>
-                <li><a href="">Áo sơ mi</li>
+                <li><a href="/View/Pages/delivery/delivery.php">Áo sơ mi</li>
                 <li><a href="">Áo thun</a></li>
                 <li><a href="">Áo Vest</a></li>
                 <li><a href="">Áo khóac</a></li>
