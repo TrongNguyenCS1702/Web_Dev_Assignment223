@@ -1,5 +1,4 @@
 
-<?php include 'views/admin_navbar.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +14,7 @@
             <li><a href="?action=manage_vouchers">Manage Vouchers</a></li>
             <li><a href="?action=view_user">Manage Users</a></li>
             <li><a href="?action=manage_orders">Manage Orders</a></li>
+            <li><a href="?action=logout">Logout</a></li>
         </ul>
     </nav>
     <h1>Edit User</h1>

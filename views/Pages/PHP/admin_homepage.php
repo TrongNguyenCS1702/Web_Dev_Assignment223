@@ -17,6 +17,7 @@ $adminInfo = $adminController->getAdminInformationByUsername($_SESSION['username
             <li><a href="?action=manage_vouchers">Manage Vouchers</a></li>
             <li><a href="?action=view_user">Manage Users</a></li>
             <li><a href="?action=manage_orders">Manage Orders</a></li>
+            <li><a href="?action=logout">Logout</a></li>
         </ul>
     </nav>
 

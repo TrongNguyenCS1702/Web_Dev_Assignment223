@@ -216,6 +216,12 @@ if (isset($_SESSION['user_role'])) {
             exit;
         }
     }
+     elseif ($action === 'logout') {
+        // Perform logout logic here (destroy session, redirect to login, etc.)
+        session_destroy();
+        header("Location: ?action=admin_login");
+        exit;
+    }
     } elseif ($_SESSION['user_role'] === 'user') {
         // Redirect to user homepage or other user-related actions
         // Add your user-related logic here
