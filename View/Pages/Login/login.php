@@ -1,3 +1,4 @@
+<?php include '../../Component/header/header.php';?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,7 +10,6 @@
     <title>Ivy</title>
   </head>
   <body>
-  <?php include '../../Component/header/header.php';?>
   <div class="container">
     <div class="auth-container">
       <div class="auth-row">
@@ -49,7 +49,7 @@
                 <p class="auth__description">Nếu bạn chưa có tài khoản trên ivymoda.com, hãy sử dụng tùy chọn này để truy cập biểu mẫu đăng ký.</p>
                 <p class="auth__description">Bằng cách cung cấp cho IVY moda thông tin chi tiết của bạn, quá trình mua hàng trên ivymoda.com sẽ là một trải nghiệm thú vị và nhanh chóng hơn!</p>
                 <div class="auth__form__buttons">
-                    <a href="#"> <button class="button">Đăng ký</button></a>
+                    <a href="/View/Pages/rig/rigister.php"> <button class="button">Đăng ký</button></a>
                 </div>
             </div>
         </div>
