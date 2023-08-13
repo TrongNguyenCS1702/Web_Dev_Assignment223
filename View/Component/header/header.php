@@ -177,7 +177,7 @@ header {
               <a class="icon" href="/View/Pages/Login/login.php"><i class="fas fa-user"></i></a>
           </span>
           <span class="item wallet">
-              <a class="icon" href="#"><i class="fas fa-shopping-bag"></i></a>
+              <a class="icon" href="/View/Pages/cart/cart.php"><i class="fas fa-shopping-bag"></i></a>
           </span>
       </div>
     </header>

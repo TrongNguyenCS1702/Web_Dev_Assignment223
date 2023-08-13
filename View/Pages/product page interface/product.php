@@ -15,7 +15,6 @@
 <body>
 <!-- Body-->
 <div class="container">
-
   <section class="product">
     <div class="container">
       <div class="product-top row">
