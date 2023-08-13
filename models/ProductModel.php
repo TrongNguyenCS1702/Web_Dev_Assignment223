@@ -30,10 +30,38 @@ class ProductModel
         return $products;
     }
 
+    public function getProductByType($type){
+        $query = "SELECT * FROM `products` p INNER JOIN `figure` b ON p.figure_id = b.figure_id INNER JOIN `type` c ON b.type_id = c.type_id WHERE c.type_name = ?";
+        $product = $this->db->fetchAll($query, [$type]);
+        return $product;
+    }
+    public function getProductByTypeCategory($type,$category){
+        $query = "SELECT * FROM `products` p INNER JOIN `figure` b ON p.figure_id = b.figure_id INNER JOIN `type` c ON b.type_id = c.type_id  INNER JOIN `category` d ON d.category_id = b.category_id WHERE c.type_name = ? And d.category_name = ?";
+        $product = $this->db->fetchAll($query, [$type,$category]);
+        return $product;
+    }
+    public function getProductByTypeFigure($type,$figure){
+        $query = "SELECT * FROM `products` p INNER JOIN `figure` b ON p.figure_id = b.figure_id INNER JOIN `type` c ON b.type_id = c.type_id WHERE c.type_name = ? and b.figure_name = ?";
+        $product = $this->db->fetchAll($query, [$type,$figure]);
+        return $product;
+    }
+
     public function getProductById($product_id)
     {
-        $query = "SELECT * FROM Figures WHERE id = ?";
+        $query = "SELECT * FROM products WHERE id = ?";
         $product = $this->db->fetchSingle($query, [$product_id]);
+        return $product;
+    }
+    public function getProductByCategory($category)
+    {
+        $query = "SELECT * FROM `products` p INNER JOIN `figure` b ON p.figure_id = b.figure_id INNER JOIN `category` c ON b.category_id = c.category_id WHERE c.category_name = ?";
+        $product = $this->db->fetchAll($query, [$category]);
+        return $product;
+    }
+    public function getProductByFigure($figure)
+    {
+        $query = "SELECT * FROM `products` p INNER JOIN `figure` b ON p.figure_id = b.figure_id WHERE b.figure_name = ?";
+        $product = $this->db->fetchAll($query, [$figure]);
         return $product;
     }
 

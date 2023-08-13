@@ -6,63 +6,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-  <link rel="stylesheet" href="header.css">
-  <script src="index.js"></script>
+  <link rel="stylesheet" href="views/Component/header/header.css">
   <title>Ivy</title>
 </head>
 <body>
   <div class="container">
-
-    <header>  
+    <header id="header">  
       <div class="logo">
-        <img src="/View/Component/images/logo.png" alt="logo">
+        <a href="views/Pages/PHP/user/Home/home.php"><img src="views/Component/images/logo.png" alt="logo"></a>
       </div>
       <div class="menu">
-        <li><a href="#">NỮ</a>
+        <li><a href="index.php?action=products&type=Nữ">NỮ</a>
           <ul class="sub-menu">
-            <li><a href="#">Áo</a>
+            <li><a href="index.php?action=products&type=Nữ&category=Áo">Áo</a>
               <ul>
-                <li><a href="">Áo sơ mi</li>
-                <li><a href="">Áo thun</a></li>
-                <li><a href="">Áo Vest</a></li>
-                <li><a href="">Áo khóac</a></li>
-                <li><a href="">Áo Len</a></li>
+                <li><a href="index.php?action=products&type=Nữ&figure=Áo sơ mi">Áo sơ mi</li>
+                <li><a href="index.php?action=products&type=Nữ&figure=Áo thun">Áo thun</a></li>
+                <li><a href="index.php?action=products&type=Nữ&figure=Áo thun">Áo kiểu</a></li>
+                <li><a href="index.php?action=products&type=Nữ&figure=Áo thun">Áo peplum</a></li>
+                <li><a href="index.php?action=products&type=Nữ&figure=Áo thun">Áo vest/blazer</a></li>
               </ul>
             </li>
-            <li><a href="#">Quần</a>
+            <li><a href="index.php?action=products&type=Nữ&category=Quần">Quần</a>
               <ul>
-                <li><a href="">Áo sơ mi</a></li>
-                <li><a href="">Áo thun</a></li>
-                <li><a href="">Áo Vest</a></li>
-                <li><a href="">Áo khóac</a></li>
-                <li><a href="">Áo Len</a></li>
+                <li><a href="index.php?action=products&type=Nữ&figure=Quần jeans">Quần jeans</a></li>
+                <li><a href="index.php?action=products&type=Nữ&figure=Quần dài">Quần dài</a></li>
+                <li><a href="index.php?action=products&type=Nữ&figure=Quần lửng/short">Quần lửng/short</a></li>
+                <li><a href="index.php?action=products&type=Nữ&figure=Quần baggy">Quần baggy</a></li>
+                <li><a href="index.php?action=products&type=Nữ&figure=Jumpsuit">Jumpsuit</a></li>
               </ul>
             </li>
-            <li><a href="#">Áo</a>
+            <li><a href="index.php?action=products&type=Nữ&category=Chân váy">Chân váy</a>
               <ul>
-                <li><a href="">Áo sơ mi</a></li>
-                <li><a href="">Áo thun</a></li>
-                <li><a href="">Áo Vest</a></li>
-                <li><a href="">Áo khóac</a></li>
-                <li><a href="">Áo Len</a></li>
+                <li><a href="index.php?action=products&type=Nữ&figure=Chân váy">Chân váy</a></li>
+                <li><a href="index.php?action=products&type=Nữ&figure=Chân váy xếp li">Chân váy xếp li</a></li>
+                <li><a href="index.php?action=products&type=Nữ&figure=Chân váy chữ A">Chân váy chữ A</a></li>
               </ul>
             </li>
-            <li><a href="#">Áo</a>
+            <li><a href="index.php?action=products&type=Nữ&category=Giày/Dép">Giày/Dép</a>
               <ul>
-                <li><a href="">Áo sơ mi</a></li>
-                <li><a href="">Áo thun</a></li>
-                <li><a href="">Áo Vest</a></li>
-                <li><a href="">Áo khóac</a></li>
-                <li><a href="">Áo Len</a></li>
+                <li><a href="index.php?action=products&type=Nữ&figure=Giày/Dép">Giày/Dép</a></li>
               </ul>
             </li>
-            <li><a href="#">Áo</a>
+            <li><a href="index.php?action=products&type=Nữ&category=Phụ kiện">Phụ kiện</a>
               <ul>
-                <li><a href="">Áo sơ mi</a></li>
-                <li><a href="">Áo thun</a></li>
-                <li><a href="">Áo Vest</a></li>
-                <li><a href="">Áo khóac</a></li>
-                <li><a href="">Áo Len</a></li>
+                <li><a href="index.php?action=products&type=Nữ&figure=Phụ kiện">Phụ kiện</a></li>
               </ul>
             </li>
           </ul>
@@ -75,25 +63,25 @@
         <li><a href="#">VỀ CHÚNG TÔI</a></li>
       </div>
       <div class="orthers">
-        <div class="search">
-          <form action="#" method="get" enctype="#" name="form_search" class="form_search">
-            <input class="input" type="text" name="search" placeholder="Tìm kiếm " autocomplete="off" minlength="1">
-            <button class="submit"><i class="fas fa-search"></i></button>
-          </form>
-        </div>
-        <div class="item wallet">
-          <a class="icon" href="#"><i class="fas fa-headphones-alt"></i></a>
-        </div>
-        <div class="item wallet">
-          <a class="icon" href="#"><i class="fas fa-user"></i></a>
-        </div>
-        <div class="item wallet">
-          <a class="icon" href="#"><i class="fas fa-shopping-bag"></i></a>
-        </div>
+          <span class="search">
+              <form action="#" method="get" enctype="#" name="form_search" class="form_search">
+                  <input class="input" type="text" name="search" placeholder="Tìm kiếm " autocomplete="off" minlength="1">
+                  <button class="submit"><i class="fas fa-search"></i></button>
+              </form>
+          </span>
+          <span class="item wallet">
+              <a class="icon" href="#"><i class="fas fa-headphones-alt"></i></a>
+          </span>
+          <span class="item wallet">
+              <a class="icon" href="index.php?action=user_login"><i class="fas fa-user"></i></a>
+          </span>
+          <span class="item wallet">
+              <a class="icon" href="#"><i class="fas fa-shopping-bag"></i></a>
+          </span>
       </div>
     </header>
   </div>
-    <script src="header.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+    <script src="views/Component/header/header.js"></script>
 </body>
 </html>

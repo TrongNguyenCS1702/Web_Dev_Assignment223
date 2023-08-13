@@ -12,10 +12,10 @@ class UserModel
         $this->db = new Database();
     }
 
-    public function insertUser($username, $password, $email, $role = 'user')
+    public function insertUser($username, $password, $email,$phone,$address,$fname, $role = 'user')
     {
-        $query = "INSERT INTO users (username, password, email, role) VALUES (?, ?, ?, ?)";
-        $params = [$username, $password, $email, $role];
+        $query = "INSERT INTO users (username, password, email, phone,address,fullname,role) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        $params = [$username, $password, $email,$phone,$address,$fname, $role];
 
         return $this->db->execute($query, $params);
     }

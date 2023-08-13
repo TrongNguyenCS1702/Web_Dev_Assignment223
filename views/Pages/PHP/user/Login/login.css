@@ -44,36 +44,29 @@ padding-bottom: 32px;
 justify-content: space-between;
 }
 .left-footer {
-  max-width: 22.05%;
-  width: 100%;
+max-width: 20%;
+width: 100%;
 }
 .main-footer .top-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+display: flex;
+align-items: center;
+gap: 10px;
+margin-bottom: 16px;
 }
 .top-left {
 margin-bottom: 12px;
 }
 .content-ft {
-  font-size: 14px;
-  line-height: 24px;
-  color: #3E3E3F;
-}
-.main-footer .top-left .logo-footer, .main-footer .top-left .dmca-badge {
-  margin-right: 0;
-}
-.top-left .logo-footer {
-  margin-right: 16px;
+font-size: 14px;
+line-height: 20px;
+color: #3E3E3F;
 }
 .top-left > div {
-  display: inline-block;
-  vertical-align: middle;
+display: inline-block;
+vertical-align: middle;
 }
-img {
-  border: none;
-  max-width: 100%;
-  height: auto;
+.main-footer .top-left .logo-footer, .main-footer .top-left .dmca-badge {
+margin-right: 0;
 }
 .info-left-ft p {
 margin: 0 0 12px;
@@ -142,36 +135,103 @@ margin: 0 0 12px;
   -webkit-transition: all 0.3s ease-in-out 0s;
   -ms-transition: all 0.3s ease-in-out 0s;
 }
-@media (max-width: 768px) {
-  .main-footer {
-    flex-direction: column;
-  }
-
-  .left-footer, .center-footer, .right-footer {
-    max-width: 100%;
+/* login */
+body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+.auth-container {
+    max-width: 1170px;
     width: 100%;
-    text-align: center;
-    margin-bottom: 24px;
-  }
-
-  .left-footer .top-left, .center-footer .item-center-ft, .right-footer .info-right-ft {
-    text-align: center;
-  }
-
-  .list-social {
-    justify-content: center;
-  }
-
-  .register-form form {
-    flex-direction: column;
-  }
+    padding: 0 16px;
+    -webkit-margin-start: auto;
+    margin-inline-start: auto;
+    -webkit-margin-end: auto;
+    margin-inline-end: auto;
+    margin-top: 110px;
 }
-.list-social {
-  margin-top: 24px;
-  margin-bottom: 32px;
+.auth-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 -16px;
+    position: relative;
 }
-.list-social li {
-  list-style: none;
-  display: inline-block;
-  margin-right: 25px;
+.auth__form {
+    margin-top: 24px;
+    width: 390px;
+    max-width: 100%;
+    -webkit-margin-start: auto;
+    margin-inline-start: auto;
+    -webkit-margin-end: auto;
+    margin-inline-end: auto;
+}
+.auth__description {
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 0;
+    color: #6c6d70;
+}
+.auth__login, .auth__register {
+    flex: 0 0 480px;
+    max-width: 100%;
+    padding: 0 15px;
+}
+.auth__title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 0;
+    color: #221f20;
+}
+.auth__description {
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 0;
+    color: #6c6d70;
+}
+.auth__form__buttons {
+    margin-top: 29px;
+    text-align: center;
+}
+.form-group {
+    margin-bottom: 10px;
+}
+.auth__login .auth__title, .auth__login .auth__description, .auth__register .auth__title, .auth__register .auth__description {
+    text-align: center;
+}
+.auth__form__link{
+    color: #212529;
+}
+.button {
+    padding: 12px 24px;
+    border-radius: 16px 0px;
+    font-size: 16px;
+    line-height: 24px;
+    background-color: #221f20;
+    color: #f7f8f9;
+    border: 1px solid transparent;
+}
+.middle-divider {
+    width: 1px;
+    height: 100%;
+    background-color: #000000;
+    margin: 20px 20px; 
+    border-right: 1px solid black;
+  }
+  .register-form form input {
+    border: 0;
+    border-bottom: 1px solid #BCBDC0;
+    font-size: 14px;
+    line-height: 24px;
+    color: #221F20;
+    padding: 0 12px 10px;
+    border-radius: 0;
+    margin-right: 15px;
 }

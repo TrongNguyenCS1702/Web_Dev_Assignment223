@@ -4,10 +4,10 @@ require_once 'models/UserModel.php';
 class UserController
 {
     //---------------------REGISTER
-    public function registerUser($username, $password, $email)
+    public function registerUser($username, $password, $email,$phone,$address,$fname)
     {
         // Validate user input (you can add more validation checks as needed)
-        if (empty($username) || empty($password) || empty($email)) {
+        if (empty($username) || empty($password) || empty($email)|| empty($phone) || empty($address)|| empty($fname) ) {
             return "Please fill in all the required fields.";
         }
 
@@ -25,7 +25,7 @@ class UserController
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
         // Save the user data to the database
-        $result = $userModel->insertUser($username, $hashedPassword, $email);
+        $result = $userModel->insertUser($username, $hashedPassword, $email,$phone,$address,$fname);
 
         if ($result) {
             return "User registered successfully.";
