@@ -214,7 +214,7 @@
                             </div>
                           </div>
                         <div class="add-to-cart">
-                            <a href="/View/Pages/product page interface/product.php"><i class="fas fa-shopping-bag" style="color: white"></i></a>
+                            <a href="index.php?action=product&id='.$product['id'].'"><i class="fas fa-shopping-bag" style="color: white"></i></a>
                         </div>
                       </div>
                     </div> ';

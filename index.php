@@ -221,6 +221,9 @@ if (isset($_SESSION['role'])) {
         if ($action == "products") {
             include 'views/Pages/PHP/user/delivery/delivery.php';
         }
+        if ($action == "product") {
+            include 'views/Pages/PHP/user/product page interface/product.php';
+        }
     }
 }
 // echo print_r($_SESSION);

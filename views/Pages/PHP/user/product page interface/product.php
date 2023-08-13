@@ -1,4 +1,4 @@
-<?php include '../../Component/header/header.php';?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,15 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-  <link rel="stylesheet" href="../product page interface/product.css">
-  <script src="product.js"></script>
-  <link rel="stylesheet" href="/View/Component/header/header.css">
+  <link rel="stylesheet" href="views/Pages/PHP/user/product page interface/product.css">
+  <script src="views/Pages/PHP/user/product page interface/product.js"></script>
   <title>Ivy</title>
+  <?php include 'views/Component/header/header.php';?>
 </head>
 <body>
+  
 <!-- Body-->
 <div class="container">
-
   <section class="product">
     <div class="container">
       <div class="product-top row">
