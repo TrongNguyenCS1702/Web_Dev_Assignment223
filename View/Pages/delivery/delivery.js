@@ -7,3 +7,4 @@ $(document).ready(function() {
       $(this).find(".hover-img").css("opacity", 0).css("visibility", "hidden"); 
     });
   });
+//

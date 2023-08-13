@@ -57,7 +57,7 @@
           <div class="product-content-right-product-name">
             <p>1.500.000 <sup>đ</sup></p>
           </div>
-          <div class="product-content-right-product-color">
+          <!-- <div class="product-content-right-product-color">
             <p><span style="font-weight: bold;">Màu sắc: Xanh dương</span></p>
             <div class="product-content-right-product-color-img">
               <img src="./img/xanhduong.png" alt="">
@@ -72,18 +72,18 @@
               <span>XL</span>
               <span>XXL</span>
             </div>
-          </div>
+          </div> -->
           <div class="quantity">
             <p style="font-weight: bold;">Số lượng:</p>
             <input type="number" min="0" value="1">
           </div>
-          <p style="color: red">Vui lòng chọn size*</p>
+          <!-- <p style="color: red">Vui lòng chọn size*</p> -->
 
           <div class="product-content-right-product-button">
-            <button><i class="fas fa-shopping-cart"></i> <p>MUA HÀNG</p></button>
-            <button>TÌM TẠI CỬA HÀNG</button>
+            <a href="" class="custom-button"><i class="fas fa-shopping-cart"></i>MUA HÀNG</a>
+            <!-- <button>TÌM TẠI CỬA HÀNG</button> -->
           </div>
-          <div class="product-content-right-bottom">
+          <!-- <div class="product-content-right-bottom">
             <div class="product-content-right-bottom-top">
               &#8744;
             </div>
@@ -149,7 +149,7 @@
 
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
 
       </div>
