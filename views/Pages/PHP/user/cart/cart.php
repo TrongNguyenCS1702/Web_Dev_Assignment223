@@ -1,4 +1,6 @@
 <?php
+if (!(isset($_SESSION['role']) && $_SESSION['role']=="user" ))
+    $_SESSION['old_url'] = $_SERVER['REQUEST_URI'];
 
 if (isset($_POST['voucher'])) {
   $voucher = $_POST['voucher'];
@@ -169,7 +171,7 @@ if (isset($_POST['voucher'])) {
                             </div>
                         </div>
                         <div class="cart-summary__button">
-                            <a href= <?php echo isset($_SESSION['sum_qty']) ? "index.php?action=pay" : "#" ?> class="btn btn--large" id="purchase-step-1" style="padding: 12px 24px;border-radius: 16px 0px;font-size: 16px;line-height: 24px;background-color: #221f20;color: #f7f8f9;border: 1px solid transparent;">Đặt hàng</a>
+                            <a href= <?php echo isset($_SESSION['sum_qty']) ? ( isset($_SESSION['role']) && $_SESSION['role']=="user" ? "index.php?action=pay" : "index.php?action=user_login" ) : "#" ?> class="btn btn--large" id="purchase-step-1" style="padding: 12px 24px;border-radius: 16px 0px;font-size: 16px;line-height: 24px;background-color: #221f20;color: #f7f8f9;border: 1px solid transparent;">Đặt hàng</a>
                         </div>
                         <div class="cart-summary__vouchers">
                         <!--            -->

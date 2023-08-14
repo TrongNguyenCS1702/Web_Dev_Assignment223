@@ -262,7 +262,20 @@ else if (empty($action) || $action === 'user_homepage') {
     // ... (User registration handling)
 } elseif ($action === 'admin_login') {
     include 'views/Pages/PHP/admin_login.php'; // Display admin login page
-} else {
+}  elseif ($action == "products") {
+    include 'views/Pages/PHP/user/delivery/delivery.php';
+}
+elseif ($action == "product") {
+    include 'views/Pages/PHP/user/product page interface/product.php';
+}
+elseif ($action == "cart") {
+    include 'views/Pages/PHP/user/cart/cart.php';
+}
+elseif ($action == "user_homepage") {
+    include 'views/Pages/PHP/user/Home/home.php';
+}elseif ($action == "pay") {
+    include 'views/Pages/PHP/user/payment/pay.php';
+}else {
     // If the requested action is not found, show a 404 page
     header("HTTP/1.0 404 Not Found");
     echo '404 Not Found';

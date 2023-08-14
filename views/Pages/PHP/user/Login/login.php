@@ -10,8 +10,12 @@
         if( $login_result == "Login successful."){
             echo '<script>';
             echo 'alert("' . $login_result . '");';
-            echo 'window.location.href = "' . $base_url . '/index.php?action=user_homepage";';
+            if(isset($_SESSION['old_url']))
+              echo 'window.location.href = "http://localhost' . $_SESSION['old_url']. '";';
+            else
+              echo 'window.location.href = "' . $base_url . '/index.php?action=user_homepage";';
             echo '</script>';
+            unset($_SESSION['old_url']);
         }else{
             echo '<script>alert("'.$login_result.'")</script>';
         }
@@ -76,8 +80,9 @@
         </div>
       </div>
     </div>
-    <?php require_once 'views/Component/footer/footer.php'; ?>
-  </div>
+
+  </div>   
+   <?php require_once 'views/Component/footer/footer.php'; ?>
   <script src="views/Pages/PHP/user/Login/login.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
 </body>

@@ -46,11 +46,12 @@
     <title>Document</title>
 </head>
 <body>
+<?php include 'views/Component/header/header.php';?>
 <div class="container">
     <div class="order-block__title justify-content-center pt-4 pb-2">
         <h3 class="text-uppercase">Đăng ký</h3>
     </div>
-    <div class="auth auth-forgotpass">
+    <div class="auth auth-forgotpass" style="margin-top:16px">
         <div class="row" style="display: block">
             <form enctype="application/x-www-form-urlencoded" name="frm_register" method="post" action="">
                 <div class="col-md-6 col-sm-6 col-xs-12">
@@ -140,5 +141,7 @@
         </div>
     </div>
 </div>
+<?php require_once 'views/Component/footer/footer.php'; ?>
+
 </body>
 </html>
