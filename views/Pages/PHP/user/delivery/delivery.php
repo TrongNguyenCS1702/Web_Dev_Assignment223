@@ -39,106 +39,8 @@
       <div class="sidebar-prod sidebar-prod-pc">
             <div class="filter-by-side">
               <ul class="list-side">
-                    <li class="item-side item-side-size">
-                      <p class="item-side-title ">Size<span class="icon-ic_plus"></span><span class="icon-ic_minus"></span></p>
-                      <div class="sub-list-side" style="display: none;">
-                        <input type="hidden" name="hid_size">
-                                    <label class="item-sub-list po-relative">
-                            <input class="field-cat" type="radio" name="att_size[]" value="s">
-                            <span class="item-sub-title item-sub-pr ">S</span>
-                        </label>
-                                    <label class="item-sub-list po-relative">
-                            <input class="field-cat" type="radio" name="att_size[]" value="m">
-                            <span class="item-sub-title item-sub-pr ">M</span>
-                        </label>
-                                    <label class="item-sub-list po-relative">
-                            <input class="field-cat" type="radio" name="att_size[]" value="l">
-                            <span class="item-sub-title item-sub-pr ">L</span>
-                        </label>
-                                    <label class="item-sub-list po-relative">
-                            <input class="field-cat" type="radio" name="att_size[]" value="xl">
-                            <span class="item-sub-title item-sub-pr ">XL</span>
-                        </label>
-                                    <label class="item-sub-list po-relative">
-                            <input class="field-cat" type="radio" name="att_size[]" value="xxl">
-                            <span class="item-sub-title item-sub-pr ">XXL</span>
-                        </label>
-                      </div>
-                  </li>
-                  <li class="item-side item-side-color">
-                      <p class="item-side-title ">Màu sắc<span class="icon-ic_plus"></span><span class="icon-ic_minus"></span></p>
-                      <div class="sub-list-side" style="display: none;">
-                        <div class="color-filter">
-                          <input type="hidden" name="hid_color">
-                          <label class="item-sub-list po-relative">
-                            <input class="field-cat" type="radio" name="att_color[]" value="009">
-                            <span class="item-sub-title item-sub-pr " data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Vàng hoa cúc">
-                                <img src="https://pubcdn.ivymoda.com/ivy2/images/color/009.png" title="Vàng hoa cúc">
-                            </span>
-                          </label>
-                          <label class="item-sub-list po-relative">
-                            <input class="field-cat" type="radio" name="att_color[]" value="006">
-                            <span class="item-sub-title item-sub-pr " data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Xanh matcha">
-                              <img src="https://pubcdn.ivymoda.com/ivy2/images/color/006.png" title="Xanh matcha">
-                            </span>
-                          </label>
-                          <label class="item-sub-list po-relative">
-                            <input class="field-cat" type="radio" name="att_color[]" value="013">
-                            <span class="item-sub-title item-sub-pr " data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Hồng nhạt">
-                              <img src="https://pubcdn.ivymoda.com/ivy2/images/color/013.png" title="Hồng nhạt">
-                            </span>
-                          </label>
-                          <label class="item-sub-list po-relative">
-                            <input class="field-cat" type="radio" name="att_color[]" value="012">
-                            <span class="item-sub-title item-sub-pr " data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Cam đỏ">
-                              <img src="https://pubcdn.ivymoda.com/ivy2/images/color/012.png" title="Cam đỏ">
-                            </span>
-                          </label>
-                          <label class="item-sub-list po-relative">
-                            <input class="field-cat" type="radio" name="att_color[]" value="020">
-                            <span class="item-sub-title item-sub-pr " data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Tím thẫm">
-                                <img src="https://pubcdn.ivymoda.com/ivy2/images/color/020.png" title="Tím thẫm">
-                            </span>
-                          </label>
-                          <label class="item-sub-list po-relative">
-                            <input class="field-cat" type="radio" name="att_color[]" value="001">
-                            <span class="item-sub-title item-sub-pr " data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Trắng">
-                                <img src="https://pubcdn.ivymoda.com/ivy2/images/color/001.png" title="Trắng">
-                            </span>
-                          </label>
-                          <label class="item-sub-list po-relative">
-                            <input class="field-cat" type="radio" name="att_color[]" value="044">
-                            <span class="item-sub-title item-sub-pr " data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Tím cà">
-                                <img src="https://pubcdn.ivymoda.com/ivy2/images/color/044.png" title="Tím cà">
-                            </span>
-                          </label>
-                          <label class="item-sub-list po-relative">
-                            <input class="field-cat" type="radio" name="att_color[]" value="047">
-                            <span class="item-sub-title item-sub-pr " data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Tím khói">
-                                <img src="https://pubcdn.ivymoda.com/ivy2/images/color/047.png" title="Tím khói">
-                            </span>
-                          </label>
-                          <label class="item-sub-list po-relative">
-                            <input class="field-cat" type="radio" name="att_color[]" value="010">
-                            <span class="item-sub-title item-sub-pr " data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Vàng mustard">
-                                <img src="https://pubcdn.ivymoda.com/ivy2/images/color/010.png" title="Vàng mustard">
-                            </span>
-                          </label>
-                          <label class="item-sub-list po-relative">
-                            <input class="field-cat" type="radio" name="att_color[]" value="014">
-                            <span class="item-sub-title item-sub-pr " data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Hồng tím">
-                                <img src="https://pubcdn.ivymoda.com/ivy2/images/color/014.png" title="Hồng tím">
-                            </span>
-                          </label>
-                          <label class="item-sub-list po-relative">
-                            <input class="field-cat" type="radio" name="att_color[]" value="000">
-                            <span class="item-sub-title item-sub-pr " data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Ngẫu nhiên">
-                                <img src="https://pubcdn.ivymoda.com/ivy2/images/color/000.png" title="Ngẫu nhiên">
-                            </span>
-                          </label>
-                        </div>
-                      </div>
-                  </li>
+                    
+                  
                   <li class="item-side item-side-price">
                     <p class="item-side-title ">Mức giá<span class="icon-ic_plus"></span><span class="icon-ic_minus"></span></p>
                       <div class="sub-list-side" style="display: none;">
@@ -156,6 +58,20 @@
                       </div>
                   </li>
               </ul>
+              <div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            <!-- Price Range Slider -->
+            <label for="priceSlider">Price Range Slider:</label>
+            <input onchange="change()" value="0" type="range" class="custom-range" id="priceSlider" min="0" max="5000000" step="500000">
+            <div id="price">Lớn hơn: 0</div>
+        </div>
+        <div class="col-md-4">
+            <!-- Apply Button -->
+            <button class="btn btn-primary" id="applyFilter">Apply Filter</button>
+        </div>
+    </div>
+</div>
               <div class="col-md-12 p-0" style="margin-top: 30px">
                   <div class="row m-0 p-0">
                       <div class="col-6">
@@ -231,6 +147,6 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="views/Pages/user/delivery/delivery.js"></script>
+    <script src="views/Pages/PHP/user/delivery/delivery.js"></script>
 </body>
 </html>

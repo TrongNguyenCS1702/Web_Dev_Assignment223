@@ -77,7 +77,7 @@
           </span>
           <?php echo isset($_SESSION['role']) ?
            '<span class="item wallet">
-          <a class="icon" style="color:black" href="index.php?action=user_logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+          <a class="icon" style="color:black" href="index.php?action=user_logout"><i class="bi bi-box-arrow-right"></i></a>
           </span>' : '
           <span class="item wallet">
               <a class="icon" style="color:black" href="index.php?action=user_login"><i class="fas fa-user"></i></a>
