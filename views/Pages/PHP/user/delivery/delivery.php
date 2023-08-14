@@ -197,14 +197,14 @@
                       echo '<div class="item-cat-product">
                       <div class="product">
                           <div class="thumb-product">
-                            <a href="#" id="product-links">
+                            <a href="index.php?action=product&id='.$product['id'].'" id="product-links">
                               <img src="'.$product["image_url"].'" alt="'.$product["name"].'" class="lazy">
                               <img src="'.$product["image_url"].'" alt="'.$product["name"].'" class="hover-img lazy">
                             </a>
                           </div>
                           <div class="info-product">
                             <h3 class="title-product">
-                                <a href="#">'.$product["name"].'</a>
+                                <a style="text-decoration: none;" href="index.php?action=product&id='.$product['id'].'">'.$product["name"].'</a>
                             </h3>
                             <div class="price-product">
                               <ins>
