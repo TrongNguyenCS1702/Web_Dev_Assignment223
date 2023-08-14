@@ -29,6 +29,12 @@
         <input type="email" name="email" value="<?php echo $user['email']; ?>"><br>
         <label for="password">New Password:</label>
         <input type="password" name="password"><br>
+        <label for="fullname">Fullname:</label>
+        <input type="text" name="fullname" value="<?php echo $user['fullname']; ?>"><br>
+        <label for="address">Address:</label>
+        <input type="text" name="address" value="<?php echo $user['address']; ?>"><br>
+        <label for="phone">Phone:</label>
+        <input type="text" name="phone" value="<?php echo $user['phone']; ?>"><br>
         <button type="submit" name="update">Update</button>
     </form>
 </body>

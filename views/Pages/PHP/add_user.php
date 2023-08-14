@@ -23,15 +23,18 @@
     <?php endif; ?>
 
     <form method="post" action="?action=add_user">
-        <!-- Add user input fields here (username, email, password, role) -->
-        <input type="text" name="username" placeholder="Username" required><br>
-        <input type="email" name="email" placeholder="Email" required><br>
-        <input type="password" name="password" placeholder="Password" required><br>
-        <select name="role" required>
-            <option value="admin">Admin</option>
-            <option value="user">User</option>
-        </select><br>
-        <input type="submit" name="submit" value="Add User">
-    </form>
+    <!-- Add user input fields here (username, email, password, role) -->
+    <input type="text" name="username" placeholder="Username" required><br>
+    <input type="email" name="email" placeholder="Email" required><br>
+    <input type="password" name="password" placeholder="Password" required><br>
+    <select name="role" required>
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+    </select><br>
+    <input type="text" name="fullname" placeholder="Full Name" required><br>
+    <input type="text" name="address" placeholder="Address" required><br>
+    <input type="text" name="phone" placeholder="Phone" required><br>
+    <input type="submit" name="submit" value="Add User">
+</form>
 </body>
 </html>

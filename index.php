@@ -23,11 +23,27 @@ if (isset($_SESSION['user_role'])) {
             include 'views/Pages/PHP/admin_homepage.php';
             exit; // Add this line to stop further processing
         } elseif ($action === 'add_product') {
-            // Add product page
-            // Add your add product logic here
-        } elseif ($action === 'update_product') {
-            // Update product page
-            // Add your update product logic here
+            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_product'])) {
+                $id = $_POST['id']; // Add this line to get the value of id
+                $name = $_POST['name'];
+                $description = $_POST['description'];
+                $price = $_POST['price'];
+                $quantity = $_POST['quantity'];
+                $figure_id = $_POST['figure'];
+                $image_url = $_POST['image_url'];
+        
+                $add_result = $adminController->addProduct($id, $name, $description, $price, $quantity, $figure_id, $image_url);
+        
+                if ($add_result) {
+                    $add_message = "Product added successfully.";
+                } else {
+                    $add_message = "Error adding product.";
+                }
+            }
+        
+            $figures = $adminController->getAllFigures(); // Get the list of figures
+            include 'views/Pages/PHP/add_product.php';
+            exit;
         } elseif ($action === 'view_user') {
             // Include the view_users.php file here
             include 'views/Pages/PHP/view_users.php';
@@ -40,8 +56,11 @@ if (isset($_SESSION['user_role'])) {
                     $newUsername = $_POST['username'];
                     $newEmail = $_POST['email'];
                     $newPassword = $_POST['password']; // Get new password from form
-        
-                    $update_result = $adminController->editUser($user_id, $newUsername, $newEmail, $newPassword);
+                    $newFullname = $_POST['fullname'];
+                    $newAddress = $_POST['address'];
+                    $newPhone = $_POST['phone'];
+
+                    $update_result = $adminController->editUser($user_id, $newUsername, $newEmail, $newPassword, $newFullname, $newAddress, $newPhone);
         
                     if ($update_result) {
                         $update_message = "User information updated successfully.";
@@ -71,8 +90,11 @@ if (isset($_SESSION['user_role'])) {
                 $email = $_POST['email'];
                 $password = $_POST['password'];
                 $role = $_POST['role'];
+                $fullname = $_POST['fullname'];
+                $address = $_POST['address'];
+                $phone = $_POST['phone'];
         
-                $add_result = $adminController->addUser($username, $email, $password, $role);
+                $add_result = $adminController->addUser($username, $email, $password, $role, $fullname, $address, $phone);
         
                 if ($add_result) {
                     $add_message = "User added successfully.";
@@ -93,9 +115,10 @@ if (isset($_SESSION['user_role'])) {
                     $newDescription = $_POST['description'];
                     $newPrice = $_POST['price'];
                     $newQuantity = $_POST['quantity'];
+                    $newFigureId = $_POST['figure_id']; // Get the existing figure_id
                     $newImageUrl = $_POST['image_url'];
         
-                    $update_result = $adminController->editProduct($product_id, $newName, $newDescription, $newPrice, $newQuantity, $newImageUrl);
+                    $update_result = $adminController->editProduct($product_id, $newName, $newDescription, $newPrice, $newQuantity, $newFigureId, $newImageUrl);
         
                     if ($update_result) {
                         $update_message = "Product information updated successfully.";
@@ -106,24 +129,41 @@ if (isset($_SESSION['user_role'])) {
                 include 'views/Pages/PHP/edit_product.php';
                 exit;
             }
-        } elseif ($action === 'delete_product') {
-            $product_id = isset($_GET['id']) ? $_GET['id'] : null;
-            if ($product_id) {
-                $delete_result = $adminController->deleteProduct($product_id);
+        } elseif ($action === 'delete_user') {
+            $user_id = isset($_GET['id']) ? $_GET['id'] : null;
+            if ($user_id) {
+                $delete_result = $adminController->deleteUser($user_id);
                 if ($delete_result) {
-                    $delete_message = "Deleted product successfully.";
+                    $delete_message = "Deleted user successfully.";
                 } else {
-                    $delete_message = "Error deleting product.";
+                    $delete_message = "Error deleting user.";
                 }
             }
-        // Fetch the list of products
-        $products = $adminController->getAllProducts();
-        include 'views/Pages/PHP/view_products.php';
-        exit;
-    } 
+            $users = $adminController->getAllUsers(); 
+            include 'views/Pages/PHP/view_users.php';
+            exit;
+        }
     elseif ($action === 'view_products') {
-        $products = $adminController->getAllProducts();
-        include 'views/Pages/PHP/view_products.php';
+        if (isset($_GET['apply_filters'])) {
+            $product = $adminController->getProductsByFilters();
+
+            $typeModel = new TypeModel();
+            $categoryModel = new CategoryModel();
+            $types = $typeModel->getAllTypes();
+            $categories = $categoryModel->getAllCategories();
+    
+            include 'views/Pages/PHP/view_products.php';
+        } else {
+            $products = $adminController->getAllProducts();
+    
+            // Fetch types and categories for dropdown options
+            $typeModel = new TypeModel();
+            $categoryModel = new CategoryModel();
+            $types = $typeModel->getAllTypes();
+            $categories = $categoryModel->getAllCategories();
+    
+            include 'views/Pages/PHP/view_products.php';
+        }
         exit;
     } elseif ($action === 'delete_product') {
         $product_id = isset($_GET['id']) ? $_GET['id'] : null;
@@ -159,10 +199,16 @@ if (isset($_SESSION['user_role'])) {
                 $add_message = "Error adding voucher.";
             }
         }
+    
+        // Set a default value for $add_message if it's not set
+        if (!isset($add_message)) {
+            $add_message = "";
+        }
+    
         include 'views/Pages/PHP/add_voucher.php';
         exit;
-    }elseif ($action === 'view_vouchers') {
-        $vouchers = $adminController->getAllVouchers(); // Fetch vouchers from the controller
+    } elseif ($action === 'view_vouchers') {
+        $vouchers = $adminController->getAllVouchers();
         include 'views/Pages/PHP/view_vouchers.php';
         exit;
     }

@@ -20,25 +20,28 @@
     
     <h1>Edit Product</h1>
     <?php if (isset($update_message)): ?>
-        <p><?php echo $update_message; ?></p>
-    <?php endif; ?>
-    <form method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" value="<?php echo $product['name']; ?>" required><br>
+    <p><?php echo $update_message; ?></p>
+<?php endif; ?>
+<form method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="<?php echo $product['name']; ?>" required><br>
 
-        <label for="description">Description:</label>
-        <textarea id="description" name="description"><?php echo $product['description']; ?></textarea><br>
+    <label for="description">Description:</label>
+    <textarea id="description" name="description"><?php echo $product['description']; ?></textarea><br>
 
-        <label for="price">Price:</label>
-        <input type="text" id="price" name="price" value="<?php echo $product['price']; ?>" required><br>
+    <label for="price">Price:</label>
+    <input type="text" id="price" name="price" value="<?php echo $product['price']; ?>" required><br>
 
-        <label for="quantity">Quantity:</label>
-        <input type="number" id="quantity" name="quantity" value="<?php echo $product['quantity']; ?>" required><br>
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" value="<?php echo $product['quantity']; ?>" required><br>
 
-        <label for="image_url">Image URL:</label>
-        <input type="text" id="image_url" name="image_url" value="<?php echo $product['image_url']; ?>"><br>
+    <label for="image_url">Image URL:</label>
+    <input type="text" id="image_url" name="image_url" value="<?php echo $product['image_url']; ?>"><br>
 
-        <button type="submit" name="update">Update</button>
-    </form>
+    <input type="hidden" name="figure_id" value="<?php echo $product['figure_id']; ?>">
+    <!-- Add hidden input field to store the figure_id -->
+
+    <button type="submit" name="update">Update</button>
+</form>
 </body>
 </html>
