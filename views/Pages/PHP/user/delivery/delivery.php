@@ -208,7 +208,7 @@
                             </h3>
                             <div class="price-product">
                               <ins>
-                                  <span>'.$product["price"].'</span>
+                                  <span>'. number_format($product["price"], 0, '.', ',').'<sup>đ</sup></span>
                               </ins>
                               
                             </div>

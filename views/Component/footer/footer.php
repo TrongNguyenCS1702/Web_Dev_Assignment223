@@ -138,7 +138,7 @@
         <div class="register-form">
           <p class="title-footer">Nhận thông tin các chương trình của IVY moda</p>
 					<form id="frm_subscribe">
-            <input id="email_subscribe" type="text" name="email" placeholder="Nhập địa chỉ email" required="required" style="border: 0;
+            <input id="email_subscribe" type="text" name="email" placeholder="Nhập địa chỉ email" required="required" style="border: 0;padding: 15px;
     border-bottom: 1px solid #BCBDC0;">
 						<div class="btn-submit">
 							<input id="btn-submit" class="form-submit" value="Đăng ký" type="submit">

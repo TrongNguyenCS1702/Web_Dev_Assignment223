@@ -18,6 +18,9 @@ $adminController = new AdminController();
 // If the user is already logged in, redirect to the appropriate page
 if (isset($_SESSION['role'])) {
     if ($_SESSION['role'] === 'admin') {
+        // if ($action == "user_logout") {
+        //     include 'views/Pages/PHP/user/Logout/logout.php';
+        // }
         if ($action === 'admin_homepage') {
             // Admin homepage: Display admin information and options
             include 'views/Pages/PHP/admin_homepage.php';
@@ -224,11 +227,29 @@ if (isset($_SESSION['role'])) {
         if ($action == "product") {
             include 'views/Pages/PHP/user/product page interface/product.php';
         }
+        if ($action == "user_logout") {
+            include 'views/Pages/PHP/user/Logout/logout.php';
+        }
+        if ($action == "cart") {
+            include 'views/Pages/PHP/user/cart/cart.php';
+        }
+        if ($action == "user_homepage") {
+            include 'views/Pages/PHP/user/Home/home.php';
+        }
+        if ($action == "check_voucher") {
+            include 'views/Pages/PHP/user/payment/check_voucher.php';
+        }
+        if ($action == "pay") {
+            include 'views/Pages/PHP/user/payment/pay.php';
+        }
+        if ($action == "add_order") {
+            include 'views/Pages/PHP/user/payment/add_order.php';
+        }
     }
 }
 // echo print_r($_SESSION);
 // Routing based on the action parameter
-if (empty($action) || $action === 'user_homepage') {
+else if (empty($action) || $action === 'user_homepage') {
     // ... (User-related actions)
     include 'views/Pages/PHP/user/Home/home.php';
 } elseif ($action === 'user_login') {

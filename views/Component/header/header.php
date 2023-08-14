@@ -6,7 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  
   <link rel="stylesheet" href="views/Component/header/header.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
   <title>Ivy</title>
 </head>
 <body>
@@ -66,17 +69,26 @@
           <span class="search">
               <form action="#" method="get" enctype="#" name="form_search" class="form_search">
                   <input class="input" type="text" name="search" placeholder="Tìm kiếm " autocomplete="off" minlength="1">
-                  <button class="submit"><i class="fas fa-search"></i></button>
+                  <button type="submit" class="submit"><i class="fas fa-search"></i></button>
               </form>
           </span>
           <span class="item wallet">
-              <a class="icon" href="#"><i class="fas fa-headphones-alt"></i></a>
+              <a class="icon" style="color:black" href="#"><i class="fas fa-headphones-alt  "></i></a>
           </span>
+          <?php echo isset($_SESSION['role']) ?
+           '<span class="item wallet">
+          <a class="icon" style="color:black" href="index.php?action=user_logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+          </span>' : '
           <span class="item wallet">
-              <a class="icon" href="index.php?action=user_login"><i class="fas fa-user"></i></a>
-          </span>
+              <a class="icon" style="color:black" href="index.php?action=user_login"><i class="fas fa-user"></i></a>
+          </span>';
+          ?>
+         
           <span class="item wallet">
-              <a class="icon" href="#"><i class="fas fa-shopping-bag"></i></a>
+          <div class="cart-icon">
+              <a class="icon" style="color:black" href="index.php?action=cart "><i class="fas fa-shopping-bag"></i></a>
+              <span class="cart-count"><?php echo count(isset($_SESSION['cart']) ? $_SESSION['cart'] : []) ; ?> </span>
+  </div>
           </span>
       </div>
     </header>

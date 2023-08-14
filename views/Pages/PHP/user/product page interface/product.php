@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +7,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
   <link rel="stylesheet" href="views/Pages/PHP/user/product page interface/product.css">
-  <script src="views/Pages/PHP/user/product page interface/product.js"></script>
   <title>Ivy</title>
   <?php include 'views/Component/header/header.php';?>
 </head>
@@ -37,89 +35,72 @@
         </ol>
       </div>
       </div>
-      <div class="product-content row">
-        <div class="product-content-left row">
+      <?php 
+      if(isset($_GET['id'])){
+        $id = $_GET['id'];
+        $productModel = new ProductModel();
+        $product = $productModel->getProductById($id);
+      }
+      echo '
+      <div class="product-content">
+        <div class="product-content-left">
           <div class="product-content-left-big-img">
-            <img id="bigimage" src="img/big-img-1.jpg" alt="">  
+            <img id="bigimage" src="'.$product['image_url'].'" alt="">  
           </div>
           <div class="product-content-left-small-img">
-            <img class="small-image" src="img/small-1.jpg" alt="">
-            <img class="small-image" src="img/small-2.jpg" alt="">
-            <img class="small-image" src="img/small-3.jpg" alt="">
-            <img class="small-image" src="img/small-4.jpg" alt=""> 
+            <img class="small-image image" src="'.$product['image_url'].'" alt="">
           </div>
         </div>
         <div class="product-content-right">
           <div class="product-content-right-product-name">
-            <h1>ÁO THUN CỔ TRÒN MS 57E2969</h1>
-            <P>MSP: 57E2969</P>
+            <h1 class="name">'.$product['name'].'</h1>
           </div>
           <div class="product-content-right-product-name">
-            <p>1.500.000 <sup>đ</sup></p>
+            <p class="price">'.number_format($product['price'], 0, '.', ',').' <sup>đ</sup></p>
           </div>
-          <!-- <div class="product-content-right-product-color">
-            <p><span style="font-weight: bold;">Màu sắc: Xanh dương</span></p>
-            <div class="product-content-right-product-color-img">
-              <img src="./img/xanhduong.png" alt="">
-            </div>
-          </div>
-          <div class="product-content-right-product-size">
-            <p style="font-weight: bold;">Size:</p>
-            <div class="size">
-              <span>S</span>
-              <span>M</span>
-              <span>L</span>
-              <span>XL</span>
-              <span>XXL</span>
-            </div>
-          </div> -->
           <div class="quantity">
             <p style="font-weight: bold;">Số lượng:</p>
-            <input type="number" min="0" value="1">
+            <input class="qty" type="number" min="0" value="1">
           </div>
-          <!-- <p style="color: red">Vui lòng chọn size*</p> -->
-
-          <div class="product-content-right-product-button">
-            <a href="" class="custom-button"><i class="fas fa-shopping-cart"></i>MUA HÀNG</a>
-            <!-- <button>TÌM TẠI CỬA HÀNG</button> -->
+          <div class="row ">
+            <div type="button" onclick="add(';
+            echo  $product['id'].','.$product['price'].",'";
+            echo $product['name']."','";
+            echo $product['image_url']."')";
+            echo '" class="col-md-6 col-md-6 product-content-right-product-button add-to-cart" style="margin-top:24px;">
+                <div  class="custom-button" style="width:100%;height:100%;text-align:center;display:flex;justify-content:space-between;">
+                    <div style="display:flex;align-items:center"><i class="fa-solid fa-cart-plus"></i></div>
+                    THÊM VÀO GIỎ 
+                    </div>
           </div>
-          <!-- <div class="product-content-right-bottom">
-            <div class="product-content-right-bottom-top">
-              &#8744;
-            </div>
+          <div class="col-md-6 product-content-right-product-button" style="margin-top:24px;" >
+            <a  class="custom-button" style="width:100%;height:100%;text-align:center;display:flex;justify-content:space-between"><div style="display:flex;align-items:center"><i class="fa-solid fa-cart-shopping"></i></div>MUA HÀNG</a>
+          </div>
+          </div>
+          <div class="product-content-right-bottom">
             <div class="product-content-right-bottom-content-big">
               <div class="product-content-right-bottom-content-title">
                 <div class="row">
-                  <div class="col">
-                    <div class="product-content-right-bottom-content-title-item chitiet" onclick="showTab('chitiet')">
+                  <div class="col-4" style="text-align:center;font-weight: bold;">
+                    <div class="product-content-right-bottom-content-title-item chitiet" onclick="showTab("chitiet")">
                       <p>Chi tiết</p>
                     </div>
                   </div>
-                  <div class="col">
-                    <div class="product-content-right-bottom-content-title-item baoquan" onclick="showTab('baoquan')">
+                  <div class="col-4" style="text-align:center;font-weight: bold;">
+                    <div class="product-content-right-bottom-content-title-item baoquan" onclick="showTab("baoquan")">
                       <p>Bảo quản</p>
                     </div>
                   </div>
-                  <div class="col">
-                    <div class="product-content-right-bottom-content-title-item thamkhao" onclick="showTab('thamkhao')">
+                  <div class="col-4" style="text-align:center;font-weight: bold;">
+                    <div class="product-content-right-bottom-content-title-item thamkhao" onclick="showTab("thamkhao")">
                       <p>Tham khảo size</p>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="product-content-right-bottom-content">
-                <div class="product-content-right-bottom-content-chitiet active">
-                  Áo thun trơn cổ tròn basic sẽ là item không thể thiếu trong những ngày hè sắp tới cho mọi chàng trai. <br>
-
-                  Dáng áo trẻ trung dễ mặc cùng túi áo trước ngực lạ mắt mang cảm giác hiện đại. Chất áo thun thoáng mát cho các chàng trai vận động thoải mái không lo trong thời tiết mùa hè sắp tới. <br>
-
-                  Màu sắc: Nude - Xanh Dương <br>
-
-                  Mẫu mặc size L: <br>
-
-                  Chiều cao: 1m77 <br>
-                  Cân nặng: 68kg <br>
-                  Số đo 3 vòng: 94-86-98 cm <br>
+                <div class="product-content-right-bottom-content-chitiet active" style="padding: 0 24px 24px 24px">
+                  '.$product['description'].'
                 </div>
                 <div class="product-content-right-bottom-content-baoquan">
                   Chi tiết bảo quản sản phẩm : <br>
@@ -149,45 +130,37 @@
 
               </div>
             </div>
-          </div> -->
+          </div> 
         </div>
 
-      </div>
+      </div>';
+        ?>
     </div>
   </section>
   <section class="product-related container">
     <div class="product-related-title">
       <p>SẢN PHẨM LIÊN QUAN</p>
     </div>
-    <div class="row product-content">
+    <?php 
+    $product_lq = $productModel->getProductByFigure($product['figure_id']);
+   
+   echo '<div class="row product-content">';
+   foreach ($product_lq as $product1)
+   echo'
       <div class="col-md-3 product-related-item">
-        <img src="img/big-img-1.jpg" alt="" >
-        <h1>ÁO THUN CỔ TRÒN MS 57E2969</h1>
-        <p>1.500.000 <sup>đ</sup></p>
-      </div>
-      <div class="col-md-3 product-related-item">
-        <img src="img/big-img-1.jpg" alt="">
-        <h1>ÁO THUN CỔ TRÒN MS 57E2969</h1>
-        <p>1.500.000 <sup>đ</sup></p>
-      </div>
-      <div class="col-md-3 product-related-item">
-        <img src="img/big-img-1.jpg" alt="">
-        <h1>ÁO THUN CỔ TRÒN MS 57E2969</h1>
-        <p>1.500.000 <sup>đ</sup></p>
-      </div>
-      <div class="col-md-3 product-related-item">
-        <img src="img/big-img-1.jpg" alt="">
-        <h1>ÁO THUN CỔ TRÒN MS 57E2969</h1>
-        <p>1.500.000 <sup>đ</sup></p>
-      </div>
-      <div class="col-md-3 product-related-item">
-        <img src="img/big-img-1.jpg" alt="">
-        <h1>ÁO THUN CỔ TRÒN MS 57E2969</h1>
-        <p>1.500.000 <sup>đ</sup></p>
-      </div>
-    </div>
+        <img src="'.$product1['image_url'].'" alt="" >
+        <h1>'.$product1['name'].'</h1>
+        <p>'.number_format($product['price'], 0, '.', ',').'<sup>đ</sup></p>
+      </div>';
+      
+    echo '</div>' ;
+    ?>
   </section>
-  
+ <script>
+
+    
+
+ </script> 
 <!-- Footer-->
 <footer style="margin-top: 30px">
     <div class="main-footer d-flex">
@@ -310,6 +283,7 @@
     </div>
     </footer>
 </div>
+<script src="views/Pages/PHP/user/product page interface/product.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

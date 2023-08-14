@@ -151,6 +151,8 @@ body {
 
 .product-content-left{
     width: 50%;
+    display: flex;
+
 }
 
 .product-content-left-big-img {
@@ -158,7 +160,7 @@ body {
     padding-right: 20px;
 }
 
-.product-content-left-big-img>img {
+.product-content-left-big-img img {
     width: 100%;
 }
 
@@ -284,7 +286,8 @@ body {
 }
 
 .product-content-right-bottom {
-    padding-top: 40px;
+    margin-top: 24px;
+    padding-top: 16px;
     border: 1px solid #dddddd;
     position: relative;
 
@@ -379,7 +382,6 @@ body {
 
 .product-related-item p {
     font-size: 12px;
-    text-decoration: line-through;
 }
 .custom-button {
     display: inline-block;
