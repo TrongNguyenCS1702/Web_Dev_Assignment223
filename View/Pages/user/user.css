@@ -1,0 +1,211 @@
+.site-main {
+    border-bottom: 1px solid #D1D2D4;
+}
+.container {
+    margin-top: 80px;
+    margin-bottom: 40px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 100%;
+}
+.mt-40 {
+    margin-top: 40px;
+}
+.order-wrapper {
+    margin-bottom: 64px;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.order-block__title {
+    display: flex;
+    align-items: center;
+}
+.order-block__title h2 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    text-transform: uppercase;
+    color: #221f20;
+    display: flex;
+    align-items: center;
+}
+.order-block__title + .order-block {
+    margin-top: 32px;
+}
+.alert-primary {
+    color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff;
+}
+.alert {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+form {
+    display: block;
+    margin-top: 0em;
+}
+body {
+    color: #6C6D70;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+}
+.my-account-wrapper .form-group {
+    align-items: center;
+}
+.form-group {
+    margin-bottom: 1rem;
+}
+.my-account-wrapper .col-label {
+    max-width: 170px;
+}
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+.my-account-wrapper .col-label label {
+    font-size: 14px;
+    line-height: 16px;
+    color: #3e3e3f;
+}
+.my-account-wrapper .col-input .form-control {
+    width: 100%;
+    font-size: 14px;
+    line-height: 16px;
+    color: #57585a;
+}
+
+.form-control[disabled] {
+    color: #bcbdc0;
+    font-weight: 700;
+    background-color: #f7f8f9;
+}
+.my-account-wrapper .col-input {
+    max-width: 530px;
+}
+.my-account-wrapper .form-group + .form-group {
+    margin-top: 24px;
+}
+.my-account-wrapper .form-group {
+    align-items: center;
+}
+.my-account-wrapper .col-input .row {
+    margin: 0 -8px;
+}
+.my-account-wrapper .form-buttons .btn {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.btn--large {
+    padding: 12px 24px;
+    border-radius: 16px 0px;
+    font-size: 16px;
+    line-height: 24px;
+    background-color: #221f20;
+    color: #f7f8f9;
+    border: 1px solid transparent;
+}
+
+.btn {
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    cursor: pointer;
+}
+.my-account-wrapper .form-buttons .btn + .btn {
+    margin-left: 10px;
+}
+.btn--large.btn--outline {
+    background-color: white;
+    border: 1px solid #221f20;
+    color: #221f20;
+}
+.my-account-wrapper .form-buttons {
+    display: flex;
+    align-items: center;
+}
+#fancybox-popup.add-address {
+    max-width: 800px;
+}
+#fancybox-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Đảm bảo popup hiển thị trên phần còn lại của trang */
+}
+#fancybox-popup {
+    display: none;
+}
+#fancybox-popup h3 {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 32px;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #221f20;
+    margin-bottom: 40px;
+}
+#fancybox-popup .form-group {
+    margin-bottom: 24px;
+}
+.add-change-pass label {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    color: #6C6D70;
+    margin-bottom: 9px;
+}
+input[type=password] {
+    border: 1px solid #E7E8E9;
+    border-radius: 4px;
+    padding: 15px;
+    font-size: 14px;
+    color: #57585A;
+    font-family: 'Montserrat', sans-serif;
+}
+.form-control {
+    width: 100%;
+    height: 48px;
+    border: 1px solid #e7e8e9;
+    background: #ffffff;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 15px 16px;
+    font-family: "Montserrat", sans-serif;
+    outline: none;
+}
+.wallet-deposit-form-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+#fancybox-popup .form-button .btn {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #f7f8f9;
+    width: 100%;
+}
