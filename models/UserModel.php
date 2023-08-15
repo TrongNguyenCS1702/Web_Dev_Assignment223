@@ -98,4 +98,17 @@ class UserModel
         $database = new Database();
         return $database->execute($query, $params);
     }
+    public function updateinfo($user_id, $email, $address)
+    {
+        $query = "UPDATE Users SET email = ?, address = ? WHERE id = ?";
+        $params = [$email, $address, $user_id];
+        return $this->db->execute($query, $params);
+    }
+    public function changePassword($user_id,$new_password)
+    {
+        
+        $query = "UPDATE Users SET password = ?WHERE id = ?";
+        $params = [ $new_password, $user_id];
+        return $this->db->execute($query, $params);
+    }
 }

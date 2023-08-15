@@ -63,7 +63,7 @@ class UserController
             return "Invalid username or password.";
         }
     }
-
+    
     public function getAllProducts()
     {
         //TODO
@@ -78,6 +78,10 @@ class UserController
     {
         //TODO
     }
-
+    public function getProfile(){
+        $userMode = new UserModel();
+        return $userMode->getUserById($_SESSION['user_id']);
+    }
+   
 }
 ?>

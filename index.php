@@ -245,6 +245,9 @@ if (isset($_SESSION['role'])) {
         if ($action == "add_order") {
             include 'views/Pages/PHP/user/payment/add_order.php';
         }
+        if ($action == "profile") {
+            include 'views/Pages/PHP/user/profile/profile.php';
+        }
     }
 }
 // echo print_r($_SESSION);
