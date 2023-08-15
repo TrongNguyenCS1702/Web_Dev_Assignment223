@@ -39,7 +39,7 @@
       <div class="sidebar-prod sidebar-prod-pc">
             <div class="filter-by-side">
               <ul class="list-side">
-                    <li class="item-side item-side-size">
+                    <!-- <li class="item-side item-side-size">
                       <p class="item-side-title ">Size<span class="icon-ic_plus"></span><span class="icon-ic_minus"></span></p>
                       <div class="sub-list-side" style="display: none;">
                         <input type="hidden" name="hid_size">
@@ -138,10 +138,10 @@
                           </label>
                         </div>
                       </div>
-                  </li>
+                  </li> -->
                   <li class="item-side item-side-price">
                     <p class="item-side-title ">Mức giá<span class="icon-ic_plus"></span><span class="icon-ic_minus"></span></p>
-                      <div class="sub-list-side" style="display: none;">
+                      <!-- <div class="sub-list-side" style="display: none;">
                         <div id="slider-range" class="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
                           <div class="ui-slider-range ui-corner-all ui-widget-header" style="left: 0%; width: 100%;"></div>
                           <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 0%;"></span>
@@ -153,7 +153,18 @@
                             <div id="amout-from">0đ</div>
                             <div id="amout-to">10.000.000đ</div>
                         </div>
-                      </div>
+                      </div> -->
+                      <div class="double_range_slider_box">
+                        <div class="double_range_slider">
+                          <span class="range_track" id="range_track"></span>
+
+                          <input type="range" class="min" min="0" max="10000000" value="0" step="0">
+                          <input type="range" class="max" min="0" max="10000000" value="10000000" step="100000">
+        
+                          <div class="minvalue"></div>
+                          <div class="maxvalue"></div>
+                        </div>
+                      </div> 
                   </li>
               </ul>
               <div class="col-md-12 p-0" style="margin-top: 30px">
@@ -215,8 +226,8 @@
             <div class="product">
                 <div class="thumb-product">
                   <a href="#" id="product-links">
-                    <img src="/View/Pages/delivery/img/7.jpg" alt="Áo sơ mi tencel dáng oversize" class="lazy">
-                    <img src="/View/Pages/delivery/img/8.jpg" alt="Áo sơ mi tencel dáng oversize" class="hover-img lazy">
+                    <img src="./img/7.jpg" alt="Áo sơ mi tencel dáng oversize" class="lazy">
+                    <img src=".img/8.jpg" alt="Áo sơ mi tencel dáng oversize" class="hover-img lazy">
                   </a>
                 </div>
                 <div class="info-product">
@@ -233,7 +244,7 @@
                   </div>
                 </div>
               <div class="add-to-cart">
-                  <a href="/View/Pages/product page interface/product.php"><i class="fas fa-shopping-bag" style="color: white"></i></a>
+                  <a href="../product page interface/product.php"><i class="fas fa-shopping-bag" style="color: white"></i></a>
               </div>
               <!-- <div class="list-size">
                 <ul>
