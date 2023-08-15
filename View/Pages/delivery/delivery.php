@@ -170,10 +170,10 @@
               <div class="col-md-12 p-0" style="margin-top: 30px">
                   <div class="row m-0 p-0">
                       <div class="col-6">
-                          <button type="button" class="btn btn--large btn--outline but_filter_remove" style="font-size: 13px;padding: 10px 20px;">Bỏ lọc</button>
+                          <button type="button" class="btn btn--large btn--outline but_filter_remove" style="    border-radius: 16px 0px;    font-size: 10px;    background-color: #221f20;    color: #f7f8f9;border: 1px solid transparent;text-transform: uppercase;">Bỏ lọc</button>
                       </div>
                       <div class="col-6">
-                          <button type="button" class="btn btn--large but_filter_product" style="font-size: 13px;padding: 10px 20px;">Lọc</button>
+                          <button type="button" class="btn btn--large but_filter_product" style="    padding: 10px 20px;    border-radius: 16px 0px;    font-size: 10px;    line-height: 24px;    background-color: #221f20;    color: #f7f8f9;    border: 1px solid transparent;    text-transform: uppercase;">Lọc</button>
                       </div>
                   </div>
                   <p class="required" id="msg_error_size_color"></p>

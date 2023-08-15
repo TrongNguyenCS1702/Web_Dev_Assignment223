@@ -1,4 +1,5 @@
 /* footer */
+/* footer */
 body {
     margin: 0;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
@@ -45,29 +46,36 @@ body {
   justify-content: space-between;
   }
   .left-footer {
-  max-width: 20%;
-  width: 100%;
+    max-width: 22.05%;
+    width: 100%;
   }
   .main-footer .top-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
   .top-left {
   margin-bottom: 12px;
   }
   .content-ft {
-  font-size: 14px;
-  line-height: 20px;
-  color: #3E3E3F;
-  }
-  .top-left > div {
-  display: inline-block;
-  vertical-align: middle;
+    font-size: 14px;
+    line-height: 24px;
+    color: #3E3E3F;
   }
   .main-footer .top-left .logo-footer, .main-footer .top-left .dmca-badge {
-  margin-right: 0;
+    margin-right: 0;
+  }
+  .top-left .logo-footer {
+    margin-right: 16px;
+  }
+  .top-left > div {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  img {
+    border: none;
+    max-width: 100%;
+    height: auto;
   }
   .info-left-ft p {
   margin: 0 0 12px;
@@ -135,6 +143,39 @@ body {
     -o-transition: all 0.3s ease-in-out 0s;
     -webkit-transition: all 0.3s ease-in-out 0s;
     -ms-transition: all 0.3s ease-in-out 0s;
+  }
+  @media (max-width: 768px) {
+    .main-footer {
+      flex-direction: column;
+    }
+  
+    .left-footer, .center-footer, .right-footer {
+      max-width: 100%;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+  
+    .left-footer .top-left, .center-footer .item-center-ft, .right-footer .info-right-ft {
+      text-align: center;
+    }
+  
+    .list-social {
+      justify-content: center;
+    }
+  
+    .register-form form {
+      flex-direction: column;
+    }
+  }
+  .list-social {
+    margin-top: 24px;
+    margin-bottom: 32px;
+  }
+  .list-social li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 25px;
   }
   /* delivery */
 .thumb-product {
@@ -319,7 +360,6 @@ del {
     width: calc( 100% - 270px );
     padding-left: 30px;
 }
-
 .double_range_slider_box {
     position: relative;
     width: 100px;
@@ -369,8 +409,7 @@ del {
     transition: right 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     will-change: right, transform;
 }
-
-input {
+.min, .max {
     position: absolute;
     width: 100%;
     height: 5px;
