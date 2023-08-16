@@ -5,7 +5,7 @@ class Database
     private $host = 'localhost';
     private $username = 'root'; 
     private $password = ''; 
-    private $dbName = 'figure_sell'; //Remember to change DB name in localhost to this name.
+    private $dbName = 'd'; //Remember to change DB name in localhost to this name.
 
     private $conn;
 

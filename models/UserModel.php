@@ -2,6 +2,7 @@
 
 require_once 'config/Database.php';
 
+
 class UserModel
 {
     private $db;
@@ -11,10 +12,10 @@ class UserModel
         $this->db = new Database();
     }
 
-    public function insertUser($username, $password, $email, $role = 'user', $fullname, $address, $phone)
+    public function insertUser($username, $password, $email,$phone,$address,$fname, $role = 'user')
     {
-        $query = "INSERT INTO users (username, password, email, role, fullname, address, phone) VALUES (?, ?, ?, ?, ?, ?, ?)";
-        $params = [$username, $password, $email, $role, $fullname, $address, $phone];
+        $query = "INSERT INTO users (username, password, email, phone,address,fullname,role) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        $params = [$username, $password, $email,$phone,$address,$fname, $role];
 
         return $this->db->execute($query, $params);
     }
@@ -55,15 +56,21 @@ class UserModel
         return $this->db->fetchSingle($query, $params);
     }
 
-    public function deleteUser($user_id)
+    public function deleteUser($userId)
     {
-        $sql = "DELETE FROM users WHERE id = ?";
-        return $this->db->execute($sql, [$user_id]);
+        $query = "DELETE FROM Users WHERE id = ?";
+        $params = [$userId];
+
+        $result = $this->db->execute($query, $params);
+        if ($result) {
+            return true;
+        }
+
+        return false;
     }
 
-    public function getUserByUsernameRole($username, $role)
-    {
-        $query = "SELECT id, username, password FROM users WHERE username = ? AND role = ? LIMIT 1";
+    public function getUserByUsernameRole($username, $role) {
+        $query = "SELECT id, username, password FROM Users WHERE username = ? AND role = ? LIMIT 1";
         $params = [$username, $role];
 
         return $this->db->fetchSingle($query, $params);
@@ -71,23 +78,37 @@ class UserModel
 
     public function getAllUsers()
     {
-        $query = "SELECT id, username, email FROM users";
+        $query = "SELECT id, username, email FROM Users";
         return $this->db->fetchAll($query);
     }
 
-    public function editUser($user_id, $newUsername, $newEmail, $newPassword, $newFullname, $newAddress, $newPhone)
+    public function editUser($user_id, $newUsername, $newEmail, $newPassword)
     {
-        $query = "UPDATE users SET username = ?, email = ?, password = ?, fullname = ?, address = ?, phone = ? WHERE id = ?";
-        $params = [$newUsername, $newEmail, $newPassword, $newFullname, $newAddress, $newPhone, $user_id];
+        $query = "UPDATE Users SET username = ?, email = ?, password = ? WHERE id = ?";
+        $params = [$newUsername, $newEmail, $newPassword, $user_id];
         return $this->db->execute($query, $params);
     }
 
-    public function addUser($username, $email, $password, $role, $fullname, $address, $phone)
+    public function addUser($username, $email, $password, $role)
     {
-        $query = "INSERT INTO users (username, password, email, role, fullname, address, phone) VALUES (?, ?, ?, ?, ?, ?, ?)";
-        $params = [$username, $password, $email, $role, $fullname, $address, $phone];
 
+        $query = "INSERT INTO Users (username, password, email, role) VALUES (?, ?, ?, ?)";
+        $params = [$username, $password, $email, $role];
+
+        $database = new Database();
+        return $database->execute($query, $params);
+    }
+    public function updateinfo($user_id, $email, $address)
+    {
+        $query = "UPDATE Users SET email = ?, address = ? WHERE id = ?";
+        $params = [$email, $address, $user_id];
+        return $this->db->execute($query, $params);
+    }
+    public function changePassword($user_id,$new_password)
+    {
+        
+        $query = "UPDATE Users SET password = ?WHERE id = ?";
+        $params = [ $new_password, $user_id];
         return $this->db->execute($query, $params);
     }
 }
-?>
