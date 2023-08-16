@@ -126,7 +126,7 @@
                             <div class="form-check">
                                 <input class="form-check-input checkboxs" type="checkbox" name="customer_agree" value="1" id="defaultCheck1">
                                 <label style="margin-top: 4px;margin-left: 3px;" class="form-check-label" for="defaultCheck1">
-                                    <span> Đồng ý với các <a style="color: #f31f1f" href="https://ivymoda.com/about/chinh-sach-bao-hanh">điều khoản</a> của IVY </span>
+                                    <span> Đồng ý với các <a style="color: #f31f1f" href="#">điều khoản</a> của IVY </span>
                                 </label>
                             </div>
                         </div>
