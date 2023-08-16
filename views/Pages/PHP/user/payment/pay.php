@@ -22,7 +22,6 @@ if (!(isset($_SESSION['role']))) {
   echo '</script>';
 }
 ?>
-  
   <main id="main" class="site-main">
     <div class="container">
       <div class="cart pt-40 checkout">

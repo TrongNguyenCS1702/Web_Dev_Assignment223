@@ -302,8 +302,7 @@ CREATE TABLE `vouchers` (
 -- Dumping data for table `vouchers`
 --
 
-INSERT INTO `vouchers` (`id`, `code`, `discount`, `start_date`, `end_date`) VALUES
-(1, 'HK231', 120.00, '2023-08-12', '2023-08-31');
+ (1, 'HK231', 120.00, '2023-08-12', '2023-08-31');
 
 --
 -- Indexes for dumped tables

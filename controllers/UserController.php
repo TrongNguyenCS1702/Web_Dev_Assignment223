@@ -60,7 +60,7 @@ class UserController
 
             return "Đăng nhập thành công.";
         } else {
-            return "Tài khoản hoặc mật khẩu không chính xác.";
+            return "Mật khẩu không chính xác.";
         }
     }
     
