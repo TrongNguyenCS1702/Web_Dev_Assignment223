@@ -1,31 +1,10 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Aug 12, 2023 at 01:15 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `figure_sell`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `category`
---
 
 CREATE TABLE `category` (
   `category_id` int(11) NOT NULL,
@@ -47,10 +26,6 @@ INSERT INTO `category` (`category_id`, `category_name`) VALUES
 
 -- --------------------------------------------------------
 
---
--- Table structure for table `figure`
---
-
 CREATE TABLE `figure` (
   `figure_id` int(11) NOT NULL,
   `figure_name` varchar(255) NOT NULL,
@@ -58,9 +33,6 @@ CREATE TABLE `figure` (
   `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `figure`
---
 
 INSERT INTO `figure` (`figure_id`, `figure_name`, `type_id`, `category_id`) VALUES
 (1, 'áo sơ mi', 1, 1),
@@ -161,7 +133,6 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `price`, `quantity`, `figure_id`, `image_url`, `created_at`, `updated_at`) VALUES
-(0, 'ÁO TENCEL CỔ V PHỐI DÂY', 'Thiết kế áo kiểu được làm từ chất liệu lụa trơn. Độ dài áo vừa phải. Dáng áo suông. Tay áo lửng, ống tay được bo chun. Cổ dáng chữ V phối cùng những đường xếp cầu kỳ và dây thắt nơ.\n\nNhững chiếc áo suông luôn được ưu ái bởi form dáng rộng rãi, dễ dàng fit với mọi dáng người. Thiết kế áo cổ V này đem đến vẻ sang trọng và nữ tính cho những quý cô hiện đại. Chất liệu lụa cao cấp mang đến một chút độ bóng tự nhiên, góp phần khiến diện mạo nàng sáng bừng dù ở bất cứ không gian nào. Phần dây buộc trên cổ áo là điểm nhấn duyên dáng để nàng tự sáng tạo theo ý thích của mình.', 545.00, 10, 1, 'https://pubcdn.ivymoda.com/files/product/thumab/1400/2022/04/29/bbcce89a357e6e892d99ea4188cf4dbf.JPG', '2023-08-11 03:10:15', '2023-08-11 08:15:23'),
 (1, 'ÁO TENCEL TRỄ VAI TAY PHỒNG', 'Áo kiểu trễ vai, tay ngắn bo gấu. Chần chun co giãn ở gấu tay và phần sau lưng. Dáng áo suông xòe thích hợp sơ vin cùng chân váy hay các kiểu quần khác nhau. Chất vải lụa nhăn mềm mại, thoáng mát cùng sắc hồng trendy nổi bật không những phù hợp với mọi tông da mà còn đem lại phong cách bắt mắt, nữ tính.Chiếc áo là item \"must have\" cho tủ đồ mùa hè của mọi cô nàng!', 545.00, 10, 1, 'https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/04/03/adc620de3a4120edbf45b411d23cf012.jpg', '2023-08-11 08:52:08', '2023-08-11 08:52:08'),
 (2, 'ÁO LỤA CỔ THUYỀN', 'Áo cổ thuyền với thiết kế đơn giản nhưng không kém phần tinh tế, màu sắc nhẹ nhàng phù hợp diện trong mùa hè mang lại cho người diện sự thoải mái và tự tin.\r\n\r\nChi tiết đặc biệt trên áo nằm ở phần áo xếp tầng, 2 bên tay xếp bèo bồng bềnh tạo nên điểm nhấn thú vị, khiến chiếc áo trở nên độc đáo hơn. Chất liệu lụa cao cấp tạo độ rủ nhất định giúp chiếc áo thêm bay bổng, nữ tính.\r\n\r\nKết hợp cùng quần jeans vừa năng động vừa nữ tính phù hợp đi chơi, dạo phố. Với set đồ đi làm có thể kết hợp sản phẩm cùng quần âu hoặc chân váy.', 575.00, 100, 3, 'https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/06/01/e20179102e671c4a1786f639a2109251.jpg', '2023-08-11 18:38:51', '2023-08-11 18:39:25'),
 (3, 'MUSE SET - ÁO CROPTOP CHUN EO PHỐI CHÂN VÁY CHỮ A', 'Muse set là sản phẩm thời trang sành điệu và nổi bật được phối hợp giữa áo croptop và chân váy ngắn chữ A. Chất liệu vải linen đồng bộ tạo cảm giác mềm mại và rất dễ chịu khi mặc.\r\n\r\nÁo croptop của Muse set với thiết kế cổ đức cùng điểm nhấn nổi bật là phần chun eo giúp tôn lên vòng eo thon gọn của người mặc, tạo sự quyến rũ và thu hút.\r\n\r\nChân váy được may theo dáng chữ A, có độ dài trên gối mang đến sự trẻ trung và năng động. Phía sau chân váy được trang bị khoá kéo tiện dụng, cùng đường may dây đan xen ở cạp tạo điểm nhấn, giúp bộ đồ trở nên phá cách và cá tính hơn.\r\n\r\nMuse set là sự kết hợp hoàn hảo giữa sự tinh tế và phong cách thời trang hiện đại, phù hợp với nhiều dịp khác nhau như đi chơi, dạo phố, hẹn hò hay dự tiệc.', 1120.00, 100, 36, 'https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/04/20/2c9e743601f2eebf73ddd1af25c86013.jpg', '2023-08-12 02:59:35', '2023-08-12 02:59:35'),
@@ -282,7 +253,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `role`, `created_at`, `fullname`, `address`, `phone`) VALUES
-(17, 'cuong', '$2y$10$0bXfhxXo3w.IC/1P9tgAFO06JyXwUwSgas4GPOHAlP2VY/jolha/m', 'a@a', 'user', '2023-08-12 03:49:11', '', '', '');
+(17, 'cuong', '$2y$10$0bXfhxXo3w.IC/1P9tgAFO06JyXwUwSgas4GPOHAlP2VY/jolha/m', 'a@a', 'user', '2023-08-12 03:49:11', '', '', ''),
+(1, 'trong', 'admin', 'trong@gmail.com', 'admin', '2023-08-12 03:49:21', '', '', '');
 
 -- --------------------------------------------------------
 

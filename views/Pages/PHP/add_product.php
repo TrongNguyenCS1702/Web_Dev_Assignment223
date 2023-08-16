@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add User</title>
+    <title>Add Product</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -90,39 +90,32 @@
             <li><a href="?action=logout">Logout</a></li>
         </ul>
     </nav>
-    <h1>Add User</h1>
-    
+    <h1>Add Product</h1>
+
     <?php if (isset($add_message)): ?>
         <p><?php echo $add_message; ?></p>
     <?php endif; ?>
 
-    <form method="post" action="?action=add_user">
-        <!-- Add user input fields here (username, email, password, role) -->
-        <label for="username">Username:</label>
-        <input type="text" name="username" placeholder="Username" required><br>
-        
-        <label for="email">Email:</label>
-        <input type="email" name="email" placeholder="Email" required><br>
-        
-        <label for="password">Password:</label>
-        <input type="password" name="password" placeholder="Password" required><br>
-        
-        <label for="role">Role:</label>
-        <select name="role" required>
-            <option value="admin">Admin</option>
-            <option value="user">User</option>
-        </select><br>
-        
-        <label for="fullname">Full Name:</label>
-        <input type="text" name="fullname" placeholder="Full Name" required><br>
-        
-        <label for="address">Address:</label>
-        <input type="text" name="address" placeholder="Address" required><br>
-        
-        <label for="phone">Phone:</label>
-        <input type="text" name="phone" placeholder="Phone" required><br>
-        
-        <input type="submit" name="submit" value="Add User">
+    <form method="post" action="?action=add_product">
+        <label for="id">ID:</label>
+        <input type="number" name="id" placeholder="ID" required>
+        <label for="name">Name:</label>
+        <input type="text" name="name" placeholder="Name" required>
+        <label for="description">Description:</label>
+        <textarea name="description" placeholder="Description"></textarea>
+        <label for="price">Price:</label>
+        <input type="text" name="price" placeholder="Price" required>
+        <label for="quantity">Quantity:</label>
+        <input type="number" name="quantity" placeholder="Quantity" required>
+        <label for="figure">Figure:</label>
+        <select name="figure" required>
+            <?php foreach ($figures as $figure): ?>
+                <option value="<?php echo $figure['figure_id']; ?>"><?php echo $figure['figure_name']; ?></option>
+            <?php endforeach; ?>
+        </select>
+        <label for="image_url">Image URL:</label>
+        <input type="text" name="image_url" placeholder="Image URL">
+        <button type="submit" name="add_product">Add Product</button>
     </form>
 </body>
 </html>

@@ -4,10 +4,10 @@ require_once 'models/UserModel.php';
 class UserController
 {
     //---------------------REGISTER
-    public function registerUser($username, $password, $email,$phone,$address,$fname)
+    public function registerUser($username, $password, $email)
     {
         // Validate user input (you can add more validation checks as needed)
-        if (empty($username) || empty($password) || empty($email)|| empty($phone) || empty($address)|| empty($fname) ) {
+        if (empty($username) || empty($password) || empty($email)) {
             return "Please fill in all the required fields.";
         }
 
@@ -25,7 +25,7 @@ class UserController
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
         // Save the user data to the database
-        $result = $userModel->insertUser($username, $hashedPassword, $email,$phone,$address,$fname);
+        $result = $userModel->insertUser($username, $hashedPassword, $email);
 
         if ($result) {
             return "User registered successfully.";
@@ -63,7 +63,7 @@ class UserController
             return "Invalid username or password.";
         }
     }
-    
+
     public function getAllProducts()
     {
         //TODO
@@ -78,10 +78,6 @@ class UserController
     {
         //TODO
     }
-    public function getProfile(){
-        $userMode = new UserModel();
-        return $userMode->getUserById($_SESSION['user_id']);
-    }
-   
+
 }
 ?>

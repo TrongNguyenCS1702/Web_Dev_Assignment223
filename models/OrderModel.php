@@ -13,7 +13,7 @@ class OrderModel
 
     public function createOrder($userId, $voucherCode = null)
     {
-        $query = "INSERT INTO Orders (user_id, voucher_code,status) VALUES (?, ?, 'Delivery')";
+        $query = "INSERT INTO Orders (user_id, voucher_code) VALUES (?, ?)";
         $params = [$userId, $voucherCode];
 
         if ($this->db->execute($query, $params)) {
@@ -25,7 +25,7 @@ class OrderModel
 
     public function addOrderItem($orderId, $productId, $quantity)
     {
-        $query = "INSERT INTO OrderItems (order_id, product_id, quantity) VALUES (?, ?, ?)";
+        $query = "INSERT INTO OrderItems (order_id, figure_id, quantity) VALUES (?, ?, ?)";
         $params = [$orderId, $productId, $quantity];
 
         return $this->db->execute($query, $params);
