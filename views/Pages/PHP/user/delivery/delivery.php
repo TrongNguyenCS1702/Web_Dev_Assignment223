@@ -116,21 +116,12 @@ $search       = isset($_GET['search']) ? $_GET['search'] : '';
         }
 
         ?>
-<<<<<<< HEAD
-      </div>
-      <div class="pagination">
-      <a href="#" class="page-link" id="prev-page" style="color: #221f20;">Trang trước</a>
-      <a href="#" class="page-link" id="next-page"style="color: #221f20;">Trang kế tiếp</a>
     </div>
-=======
-
-      </div>
-      <div class="pagination">
-        <a href="#" class="page-link" id="prev-page" style="color: #221f20;">Trang trước</a>
-        <a href="#" class="page-link" id="next-page"style="color: #221f20;">Trang kế tiếp</a>
-      </div>
->>>>>>> 9cde67064536217d918b925d498bd50bf64d3d47
-    </div>
+  </div>
+  <div class="pagination">
+  <a href="#" class="page-link" id="prev-page" style="color: #221f20;">Trang trước</a>
+  <a href="#" class="page-link" id="next-page"style="color: #221f20;">Trang kế tiếp</a>
+</div>
   </div>
   </div>
   </div>
