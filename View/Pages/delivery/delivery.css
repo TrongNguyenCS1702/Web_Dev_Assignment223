@@ -361,86 +361,245 @@ del {
     padding-left: 30px;
 }
 .double_range_slider_box {
-    position: relative;
-    width: 100px;
-    height: 40px;
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-  }
-  
-.double_range_slider {
-    width: 90%;
-    height: 10px;
-    position: relative;
-    background-color: #dddddd;
-    border-radius: 10px;
+  position: relative;
+  width: 100px;
+  height: 40px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
 }
 
-.range_track{
-    height: 100%;
-    position: absolute;
-    border-radius: 10px;
-    background-color: black;
+.double_range_slider {
+  width: 90%;
+  height: 10px;
+  position: relative;
+  background-color: #dddddd;
+  border-radius: 10px;
 }
-  
-.minvalue {
-    position: absolute;
-    border-radius: 1rem;
-    color: black;
-    bottom: 0;
-    transform: translate(0, 160%);
-    left: 0;
-    font-size: 1rem;
-    transition: left 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-    will-change: left, transform;
+
+.range_track {
+  height: 100%;
+  position: absolute;
+  border-radius: 10px;
+  background-color: black;
 }
 
 .maxvalue {
-    position: absolute;
-    border-radius: 1rem;
-    color: black;
-    top: 0;
-    transform: translate(0, 100%);
-    right: 0;
-    font-size: 1rem;
-    transition: right 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-    will-change: right, transform;
+  position: absolute;
+  border-radius: 1rem;
+  color: black;
+  bottom: 0;
+  transform: translate(0, 160%);
+  left: 0;
+  font-size: 1rem;
+  transition: left 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  will-change: left, transform;
 }
-.min, .max {
-    position: absolute;
-    width: 100%;
-    height: 5px;
-    background: none;
-    pointer-events: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    top: 50%;
-    transform: translateY(-50%);
+
+/* .maxvalue {
+  position: absolute;
+  border-radius: 1rem;
+  color: black;
+  top: 0;
+  transform: translate(0, 100%);
+  right: 0;
+  font-size: 1rem;
+  transition: right 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  will-change: right, transform;
+} */
+
+.min {
+  position: absolute;
+  width: calc(100% - 30px);
+  height: 5px;
+  background: none;
+  pointer-events: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.max {
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 5px;
+  background: none;
+  pointer-events: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  top: 50%;
+  right: 0; /* Đặt input max ở cuối thanh trượt */
+  transform: translateY(-50%);
 }
 
 input::-webkit-slider-thumb {
-    height: 25px;
-    width: 25px;
-    border-radius: 50%;
-    border: 3px solid black;
-    background-color: black;
-    pointer-events: auto;
-    -webkit-appearance: none;
-    cursor: pointer;
-    margin-bottom: 1px;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  border: 3px solid black;
+  background-color: black;
+  pointer-events: auto;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-bottom: 1px;
 }
-  
+
 input::-moz-range-thumb {
-    height: 18px;
-    width: 18px;
-    border-radius: 50%;
-    border: 3px solid black;
-    background-color: black;
-    pointer-events: auto;
-    -moz-appearance: none;
-    cursor: pointer;
-    margin-top: 30%;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  border: 3px solid black;
+  background-color: black;
+  pointer-events: auto;
+  -moz-appearance: none;
+  cursor: pointer;
+  margin-top: 30%;
+}
+/* General styles for responsiveness */
+@media (max-width: 767px) {
+  /* Mobile styles */
+  .list-products-cat .item-cat-product {
+    width: 100%;
+    padding: 0 10px;
+    margin-bottom: 15px;
+  }
+  .box-products {
+    flex-direction: column;
+  }
+  .main-prod {
+    width: 100%;
+    padding-left: 0;
+  }
+  .side-prod {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .col-6 {
+    width: 50%;
+    padding: 0 5px;
+  }
+  .but_filter_remove,
+  .but_filter_product {
+    width: 100%;
+    text-align: center;
+  }
+  .required {
+    text-align: center;
+    margin-top: 10px;
+  }
+  /* Add more responsive styles for other elements as needed */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Tablet styles */
+  .list-products-cat .item-cat-product {
+    width: 50%;
+    padding: 0 10px;
+    margin-bottom: 15px;
+  }
+  .box-products {
+    flex-direction: column;
+  }
+  .main-prod {
+    width: 100%;
+    padding-left: 0;
+  }
+  .side-prod {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .col-6 {
+    width: 100%;
+    padding: 0 5px;
+  }
+  .but_filter_remove,
+  .but_filter_product {
+    width: 100%;
+    text-align: center;
+  }
+  .required {
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+
+/* Additional responsive adjustments */
+@media (max-width: 575px) {
+  /* Further mobile styles */
+  .item-side-title {
+    font-size: 14px;
+  }
+  .double_range_slider_box {
+    width: 80px;
+  }
+}
+
+@media (min-width: 992px) {
+  /* Further desktop styles */
+  .list-products-cat .item-cat-product {
+    width: 25%;
+    padding: 0 15px;
+    margin-bottom: 30px;
+  }
+  .side-prod {
+    width: 25%;
+    margin-bottom: 0;
+  }
+  .main-prod {
+    width: 75%;
+  }
+  .col-6 {
+    width: auto;
+    padding: 0;
+  }
+  .but_filter_remove,
+  .but_filter_product {
+    width: auto;
+    text-align: left;
+  }
+  .required {
+    text-align: left;
+    margin-top: 0;
+  }
+}
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.page-link {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 0 5px;  
+  border-radius: 16px 0px;    
+  font-size: 10px;    
+  line-height: 24px;    
+  background-color: #221f20;    
+  color: #f7f8f9;    
+  border: 1px solid transparent;    
+}
+
+.page-link:hover {
+  background-color: #f5f5f5;
+  border-color: #ccc;
+  color: #333;
+}
+
+#prev-page,
+#next-page {
+  font-weight: bold;
+}
+
+#prev-page:hover,
+#next-page:hover {
+  background-color: #333;
+  border-color: #333;
+  color: #fff;
 }
