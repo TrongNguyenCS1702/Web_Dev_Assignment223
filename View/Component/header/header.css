@@ -1,26 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-li {
-    list-style: none;
-}
-a {
-    text-decoration: none;
-    color: black;
-}
-header {
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 50px;
-    height: 70px;
-    width: 100%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s;
+.site-header {
     position: fixed;
     top: 0;
     left: 0;
@@ -28,62 +6,437 @@ header {
     background: #FFF;
     z-index: 20;
 }
-.menu{
-    flex: 3;
-    display: flex;
-}
-.menu li a {
-    padding: 0 12px;
+@media (max-width: 768px){
+.site-header .container {
+    height: 64px;
+} }
+.site-header .container {
+    justify-content: space-between;
+    height: 80px;
     position: relative;
+    align-items: center;
+}
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 100%;
+}
+nav {
     display: block;
-    line-height: 20px;
-    font-size: 12px;
+}
+@media (max-width: 768px){
+.mobile-menu, .date-combo {
+    display: block;
+} }
+.mobile-menu {
+    display: none;
+    position: relative;
+    width: 22px;
+    height: 16px;
+}
+ .mobile-menu, .close-menu {
+    cursor: pointer;
+}
+.mobile-menu span:nth-child(1) {
+    top: 0;
+}
+.mobile-menu span:nth-child(2) {
+    top: 8px;
+}
+.mobile-menu span:nth-child(3) {
+    bottom: 0;
+}
+.mobile-menu span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #000000;
+    right: 0;
+    transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+ul li {
+    list-style: none;
+}
+.sub-menu, .main-menu .menu > li:hover > .sub-menu {
+    top: 55px;
+}
+.sub-menu, .sub-menu.sub-menu-about {
+    display: none !important;
 }
 .sub-menu {
     position: absolute;
-    width: 700px;
-    padding: 10px 0 10px 20px;
-    border: 1px solid #5a5a5a;
-    visibility: hidden;
-    display: flex;
-    top: 50px;
-    transition: 0.3s;
-    background-color: #f8f9fa;
-}
-.menu li:hover .sub-menu {
-    visibility: visible;
-    top: 70px;
-}
-.sub-menu ul a {
-    font-weight: normal;
-}
-.menu a{
-    font-size: 12px;
-    font-weight: bold;
-}
-.logo {
-    flex:1;
-}
-.orthers {
-    flex: 1;
-    display: flex;
-}
-.orthers a {
-    padding: 0 12px;
-}
-.form_search {
-    position: relative;
-}  
-.submit {
-    position: absolute;
-    right: 5px; /* Điều chỉnh vị trí của nút tìm kiếm so với ô nhập liệu */
-    top: 50%; /* Đưa nút tìm kiếm lên giữa theo chiều dọc */
-    transform: translateY(-50%); /* Đưa nút tìm kiếm lên giữa theo chiều dọc */
-    border: none;
-    background-color: #f8f9fa;
-}
-.orthers input {
+    padding: 23px 24px;
+    max-width: 100%;
     width: 100%;
-    border: none;
-    border-bottom: 1px solid #000;
+    background: #FFF;
+    z-index: 10;
+    border: 1px solid #E7E8E9;
+    top: 80px;
+    transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+    left: 15px;
 }
+@media (min-width: 1024px) and (max-width: 1200px){
+.main-menu .menu > li > a {
+    font-size: 11px;
+}}
+@media (max-width: 1860px){
+.main-menu .menu > li > a {
+    font-size: 14px;
+} }
+.main-menu .menu > li > a {
+    color: #221F20;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+ .item-list-submenu {
+    margin-right: 50px;
+}
+.item-list-submenu h3 {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #221F20;
+    display: block;
+}
+a, button, input {
+    transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+}
+ol ol, ol ul, ul ol, ul ul {
+    margin-bottom: 0;
+}
+.item-list-submenu ul li a {
+    font-size: 14px;
+    line-height: 16px;
+    color: #57585A;
+    display: block;
+    margin-bottom: 16px;
+}
+@media (min-width: 1024px) and (max-width: 1200px){
+.main-menu .menu > li {
+    margin-right: 7px;
+}
+}
+.main-menu .menu > li {
+    display: inline-block;
+    margin-right: 24px;
+    padding: 15px 0;
+}
+
+.d-none {
+    display: none!important;
+}
+.menu .menu-custom {
+    position: relative;
+}
+.main-menu .menu > li:last-child {
+    margin-right: 0;
+}
+.sub-mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    right: 0;
+    bottom: 45px;
+    background: #FFF;
+    z-index: 1000;
+    padding: 64px 16px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    overflow-y: auto;
+}
+.sub-mobile-menu .box-action a {
+    background: #221F20;
+    border-radius: 16px 0px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #F7F8F9;
+    padding: 12px 0;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+.menu-mb li {
+    margin-bottom: 30px;
+}
+.menu-mb > li > a {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.sub-menu-mb, .child-sub {
+    padding-left: 22px;
+    display: none;
+}
+.sub-menu-mb li a {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.sub-menu-mb, .child-sub {
+    padding-left: 22px;
+    display: none;
+}
+.close-menu {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    font-size: 24px;
+    color: #221F20;
+}
+@media (min-width: 1020px) and (max-width: 1365px){
+.site-brand {
+    left: 57%;
+}}
+.site-brand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+@media (max-width: 1860px){
+.site-brand img {
+    height: auto;
+    width: 140px;
+}}
+
+.site-brand img {
+    width: 206px;
+    height: 66px;
+    display: block;
+}
+img {
+    border: none;
+    max-width: 100%;
+    height: auto;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+.right-header {
+    width: 50%;
+    text-align: right;
+}
+@media (min-width: 1024px) and (max-width: 1200px){
+.search-form {
+    max-width: 170px;
+    margin-right: 20px;
+} }
+.search-form {
+    width: 100%;
+    max-width: 360px;
+    position: relative;
+    margin-right: 55px;
+}
+.right-header > * {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+}
+.search-form {
+    position: relative;
+}
+
+.search-form button {
+    height: 40px;
+    width: 40px;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 2;
+}
+.search-form input {
+    width: 100%;
+    height: 40px;
+    background: #FFF;
+    border: 1px solid #E7E8E9;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 12px;
+    z-index: 1;
+}
+input[type=text] {
+    border: 1px solid #E7E8E9;
+    border-radius: 4px;
+    padding: 15px;
+    font-size: 14px;
+    color: #57585A;
+    font-family: 'Montserrat', sans-serif;
+}
+.header-actions .item {
+    position: relative;
+    display: inline-block;
+    vertical-align: bottom;
+    margin-right: 25px;
+}
+.header-actions .icon {
+    font-size: 16px;
+    color: #000;
+    position: relative;
+}
+.header-actions .item:last-child {
+    margin-right: 30px;
+}.item-cart .icon .number-cart {
+    width: 16px;
+    height: 16px;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    right: -20px;
+    top: -10px;
+}
+.number-cart {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFF;
+    background: #221F20;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: -32px;
+    font-family: 'Montserrat';
+}
+/* Show sub-menu on click */
+.menu > li:hover > .sub-menu,
+.sub-menu.active {
+    display: block !important;
+}
+.sub-menu.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+@media (max-width: 768px){
+.mobile-menu, .date-combo {
+    display: block;
+}
+.menu {
+    display: none;
+}
+.right-header form, .right-header .item.wallet {
+    display: none;
+}
+
+}
+.mobile-menu.active ~ .sub-mobile-menu {
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+}
+/* Ẩn menu con ban đầu */
+.sub-menu-mb {
+    display: none;
+  }
+  
+  /* Hiển thị dấu cộng và dấu trừ */
+  .arrow .fa-plus {
+    display: inline-block;
+  }
+  
+  .arrow .fa-minus {
+    display: none;
+  }
+  
+  /* Khi menu con được mở ra */
+  .sub-menu-mb.active {
+    display: block;
+  }
+  
+  /* Khi menu con được mở, ẩn dấu cộng và hiển thị dấu trừ */
+  .arrow.active .fa-plus {
+    display: none;
+  }
+  
+  .arrow.active .fa-minus {
+    display: inline-block;
+  }
+/* Ẩn menu con ban đầu */
+.child-sub {
+    display: none;
+  }
+  
+  /* Hiển thị dấu cộng và dấu trừ */
+  .arrows .fa-plus {
+    display: inline-block;
+  }
+  
+  .arrows .fa-minus {
+    display: none;
+  }
+  
+  /* Khi menu con được mở ra */
+  .child-sub.active {
+    display: block;
+  }
+  
+  /* Khi menu con được mở, ẩn dấu cộng và hiển thị dấu trừ */
+  .arrows.active .fa-plus {
+    display: none;
+  }
+  
+  .arrows.active .fa-minus {
+    display: inline-block;
+  }
+    
