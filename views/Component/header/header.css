@@ -12,21 +12,11 @@ a {
     color: black;
 }
 header {
-    
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 12px 50px;
+    padding: 12 50px;
     height: 70px;
-    width: 100%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: #FFF;
-    z-index: 20;
+    align-items: center;
 }
 .menu{
     flex: 3;
@@ -43,12 +33,11 @@ header {
     position: absolute;
     width: 700px;
     padding: 10px 0 10px 20px;
-    border: 1px solid #5a5a5a;
+    border: 1px solid #000;
     visibility: hidden;
     display: flex;
     top: 50px;
     transition: 0.3s;
-    background-color: #f8f9fa;
 }
 .menu li:hover .sub-menu {
     visibility: visible;
@@ -80,26 +69,10 @@ header {
     top: 50%; /* Đưa nút tìm kiếm lên giữa theo chiều dọc */
     transform: translateY(-50%); /* Đưa nút tìm kiếm lên giữa theo chiều dọc */
     border: none;
-    background-color: #00000000;
+    background-color: #f8f9fa;
 }
 .orthers input {
     width: 100%;
     border: none;
     border-bottom: 1px solid #000;
 }
-.cart-icon {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .cart-count {
-    position: absolute;
-    top: -8px;
-    right: -10px;
-    background-color: rgb(0, 0, 0);
-    color: white;
-    border-radius: 50%;
-    padding: 3px 6px;
-    font-size: 10px;
-    
-  }

@@ -60,10 +60,4 @@ class VoucherModel
         $params = [$voucher_id];
         return $this->db->fetchSingle($query, $params);
     }
-    public function getVoucherBycode($voucher_code)
-    {
-        $query = "SELECT * FROM Vouchers WHERE code = ? AND start_date <= ? AND end_date >= ? " ;
-        $params = [$voucher_code,date('Y-m-d'),date('Y-m-d')];
-        return $this->db->fetchSingle($query, $params);
-    }
 }

@@ -4,9 +4,9 @@ require_once 'models/UserModel.php';
 require_once 'models/PurchaseHistoryModel.php';
 require_once 'models/OrderModel.php';
 require_once 'models/OrderItemsModel.php';
-require_once 'models/ShoppingCartsModel.php';
-require_once 'models/ShoppingCartItemsModel.php';
-
+require_once 'models/TypeModel.php';
+require_once 'models/CategoryModel.php';
+require_once 'models/FigureModel.php';
 class AdminController
 {
 
@@ -62,18 +62,16 @@ class AdminController
     return $product;
 }
 
-public function editProduct($product_id, $name, $description, $price, $quantity, $image_url)
+public function editProduct($product_id, $name, $description, $price, $quantity, $figure_id, $image_url)
 {
     $productModel = new ProductModel();
-    $update_result = $productModel->updateProduct($product_id, $name, $description, $price, $quantity, $image_url);
-    return $update_result;
+    return $productModel->editProduct($product_id, $name, $description, $price, $quantity, $figure_id, $image_url);
 }
 
 public function deleteProduct($product_id)
 {
     $productModel = new ProductModel();
-    $delete_result = $productModel->deleteProduct($product_id);
-    return $delete_result;
+    return $productModel->deleteProduct($product_id);
 }
 
     public function getAdminInformationByUsername($username)
@@ -120,48 +118,24 @@ public function deleteProduct($product_id)
     public function deleteUser($user_id)
     {
         $userModel = new UserModel();
-        
-        // Check if the user exists
-        $user = $userModel->getUserById($user_id);
-        if (!$user) {
-            return false; // User not found
-        }
-        
-        $orderItemsModel = new OrderItemsModel();
-        $deleteOrderItems = $orderItemsModel->deleteOrderItemsByUserId($user_id);
-    
-        $purchaseHistoryModel = new PurchaseHistoryModel();
-        $deletePurchaseHistory = $purchaseHistoryModel->deletePurchaseHistoryByUserId($user_id);
-    
-        $orderModel = new OrderModel();
-        $deleteOrders = $orderModel->deleteOrdersByUserId($user_id);
-    
-        $shoppingCartItemsModel = new ShoppingCartItemsModel();
-        $deleteShoppingCartItems = $shoppingCartItemsModel->deleteShoppingCartItemsByUserId($user_id);
-    
-        $shoppingCartsModel = new ShoppingCartsModel();
-        $deleteShoppingCarts = $shoppingCartsModel->deleteShoppingCartsByUserId($user_id);
-    
-        // Now delete the user from the Users table
-        $deleteUser = $userModel->deleteUser($user_id);
-        
-        return $deleteUser;
+        return $userModel->deleteUser($user_id);
     }
+    
 
 
-    public function editUser($user_id, $newUsername, $newEmail, $newPassword)
+    public function editUser($user_id, $newUsername, $newEmail, $newPassword, $newFullname, $newAddress, $newPhone)
     {
-        // Delete the user based on the user ID
         $userModel = new UserModel(); // Create an instance of UserModel
-        $update_result = $userModel->editUser($user_id, $newUsername, $newEmail, $newPassword); // Implement this method in your UserModel
+        $update_result = $userModel->editUser($user_id, $newUsername, $newEmail, $newPassword, $newFullname, $newAddress, $newPhone); // Implement this method in your UserModel
         return $update_result;
     }
     
-    public function addUser($username, $email, $password, $role)
+    public function addUser($username, $email, $password, $role, $fullname, $address, $phone)
     {
         $userModel = new UserModel();
-        return $userModel->addUser($username, $email, $password, $role);
+        return $userModel->addUser($username, $email, $password, $role, $fullname, $address, $phone);
     }
+    
 
     public function getAllOrders()
 {
@@ -179,6 +153,40 @@ public function getOrderItemsByOrderId($order_id)
 {
     $orderItemModel = new OrderItemsModel();
     return $orderItemModel->getOrderItemsByOrderId($order_id);
+}
+
+public function getProductsByFilters()
+{
+    $productModel = new ProductModel();
+
+    $typeId = isset($_GET['typeFilter']) ? $_GET['typeFilter'] : '';
+    $categoryId = isset($_GET['categoryFilter']) ? $_GET['categoryFilter'] : '';
+
+    return $productModel->getProductsByFilters($typeId, $categoryId);
+}
+
+public function addProduct($id, $name, $description, $price, $quantity, $figure_id, $image_url)
+{
+    $productModel = new ProductModel();
+    return $productModel->insertProduct($id, $name, $description, $price, $quantity, $figure_id, $image_url);
+}
+
+public function getAllCategories()
+{
+    $categoryModel = new CategoryModel();
+    return $categoryModel->getAllCategories();
+}
+
+public function getAllTypes()
+{
+    $typeModel = new TypeModel();
+    return $typeModel->getAllTypes();
+}
+
+public function getAllFigures()
+{
+    $figureModel = new FigureModel();
+    return $figureModel->getAllFigures();
 }
 }
 ?>
