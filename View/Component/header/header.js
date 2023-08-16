@@ -73,3 +73,35 @@ hasSubChildItems.forEach(item => {
     arrows.classList.toggle('active');
   });
 });
+//
+document.addEventListener('DOMContentLoaded', function () {
+  // Lấy phần tử có lớp "close-menu"
+  const closeMenuButton = document.querySelector('.close-menu');
+  
+  // Lấy phần tử có lớp "sub-mobile-menu"
+  const subMobileMenu = document.querySelector('.sub-mobile-menu');
+  
+  // Khởi tạo biến để theo dõi trạng thái của sub-mobile-menu
+  let isSubMenuOpen = true;
+  
+  // Đặt sự kiện click cho nút đóng menu
+  closeMenuButton.addEventListener('click', function () {
+    // Nếu sub-mobile-menu đã mở, thì ẩn nó
+    if (isSubMenuOpen) {
+      subMobileMenu.style.display = 'none';
+      isSubMenuOpen = false;
+    }
+  });
+  
+  // Lấy phần tử có lớp "mobile-menu"
+  const mobileMenuButton = document.querySelector('.mobile-menu');
+
+  // Đặt sự kiện click cho nút mở menu
+  mobileMenuButton.addEventListener('click', function () {
+    // Nếu sub-mobile-menu đã ẩn, thì hiển thị nó
+    if (!isSubMenuOpen) {
+      subMobileMenu.style.display = 'block';
+      isSubMenuOpen = true;
+    }
+  });
+});
