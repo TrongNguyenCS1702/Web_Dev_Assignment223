@@ -9,6 +9,176 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="views/Component/header/header.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+header {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 50px;
+    height: 70px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #FFF;
+    z-index: 20;
+}
+.menu{
+    flex: 3;
+    display: flex;
+}
+.menu li a {
+    padding: 0 12px;
+    position: relative;
+    display: block;
+    line-height: 20px;
+    font-size: 12px;
+}
+.sub-menu {
+    position: absolute;
+    width: 700px;
+    padding: 10px 0 10px 20px;
+    border: 1px solid #5a5a5a;
+    visibility: hidden;
+    display: flex;
+    top: 50px;
+    transition: 0.3s;
+    background-color: #f8f9fa;
+}
+.menu li:hover .sub-menu {
+    visibility: visible;
+    top: 70px;
+}
+.sub-menu ul a {
+    font-weight: normal;
+}
+.menu a{
+    font-size: 12px;
+    font-weight: bold;
+}
+.logo {
+    flex:1;
+}
+.orthers {
+    flex: 1;
+    display: flex;
+}
+.orthers a {
+    padding: 0 12px;
+}
+.form_search {
+    position: relative;
+}  
+.submit {
+    position: absolute;
+    right: 5px; /* Điều chỉnh vị trí của nút tìm kiếm so với ô nhập liệu */
+    top: 58%; /* Đưa nút tìm kiếm lên giữa theo chiều dọc */
+    transform: translateY(-50%); /* Đưa nút tìm kiếm lên giữa theo chiều dọc */
+    border: none;
+    background-color: #00000000;
+}
+.orthers input {
+    width: 100%;
+    border: none;
+    padding-left: 8px;
+    padding-right: 25px;
+    border-bottom: 1px solid #000;
+}
+.cart-icon {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-radius: 50%;
+    padding: 3px 6px;
+    font-size: 10px;
+    
+  }
+
+  /* Styling cho popup */
+  .success-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 300px; /* Đặt chiều rộng */
+    text-align: center;
+  }
+  
+  .success-popup h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .success-popup p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .success-popup button {
+    padding: 8px 16px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .success-popup button:hover {
+    background-color: #5a5b5c;
+  }
+  .popup-content {
+    text-align: center;
+  }
+  
+    #showSuccessPopup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); 
+      z-index: 999; 
+  }
+  @media (max-width: 768px){
+    .orthers {
+      display: none;
+    }
+    .menu {
+      display: none;
+    }
+  }
+    </style>
 </head>
 <body>
   <div class="container">
