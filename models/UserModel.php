@@ -106,9 +106,8 @@ class UserModel
     }
     public function changePassword($user_id,$new_password)
     {
-        
-        $query = "UPDATE Users SET password = ?WHERE id = ?";
-        $params = [ $new_password, $user_id];
+        $query = "UPDATE Users SET password = ? WHERE id = ?";
+        $params = [$new_password, $user_id];
         return $this->db->execute($query, $params);
     }
 }

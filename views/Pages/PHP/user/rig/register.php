@@ -5,7 +5,6 @@
         header("Location: {$base_url}/index.php?action=user_homepage");
         exit;
     }
-    $user = new UserController();
     $username = $_SERVER['REQUEST_METHOD'] === 'POST' ? $_POST['username'] : "";
     $email = $_SERVER['REQUEST_METHOD'] === 'POST' ?  $_POST['email'] : "";
     $phone = $_SERVER['REQUEST_METHOD'] === 'POST' ?  $_POST['phone'] : "";
@@ -16,9 +15,9 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ( $_POST['pass1'] == $_POST['pass2'] && $_POST['pass2']!=''  ){
             $password = $_POST['pass1'] ;
-            $fname =  $_POST['fname'] . $_POST['name'] ;
+            $fname =  $_POST['fname'] .' '. $_POST['name'] ;
             
-            $register_result = $user->registerUser($username,$password,$email,$phone,$address,$fname);
+            $register_result = $userController->registerUser($username,$password,$email,$phone,$address,$fname);
             if ($register_result == "User registered successfully."){
                 echo '<script>';
                 echo 'alert("' . $register_result . '");';
@@ -41,9 +40,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="icon" href="https://pubcdn.ivymoda.com/ivy2/images/logo-icon.ico" type="image/png" sizes="16x16">
   <!-- <link rel="stylesheet" href="views/Pages/PHP/user/delivery/delivery.css"> -->
   <link rel="stylesheet" href="views/Pages/PHP/user/reg/register.css">
-    <title>Document</title>
+    <title>Đăng ký</title>
 </head>
 <body>
 <?php include 'views/Component/header/header.php';?>

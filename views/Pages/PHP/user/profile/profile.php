@@ -1,6 +1,12 @@
 <?php 
-
-$profile = $userController->getProfile();
+if (!(isset($_SESSION['role']) && $_SESSION['role'] == "user")) {
+    $_SESSION['old_url'] = $_SERVER['REQUEST_URI'];
+    echo '<script>';
+    echo 'alert("Bạn cần phải đăng nhập trước");';
+    echo 'window.location.href = "index.php?action=user_login";';
+    echo '</script>';
+}
+$profile = $userController->getProfile($_SESSION['user_id']);
 $name = explode(" ", $profile['fullname']);
 $lname = implode(" ", array_slice($name, 1));
 ?>
@@ -10,10 +16,11 @@ $lname = implode(" ", array_slice($name, 1));
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="https://pubcdn.ivymoda.com/ivy2/images/logo-icon.ico" type="image/png" sizes="16x16">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
         <link rel="stylesheet" href="views/Pages/PHP/user/profile/profile.css">
-        <title>Ivy</title>
+        <title>Profile</title>
     </head>
     <body>
         <?php include 'views/Component/header/header.php';?>
@@ -27,7 +34,7 @@ $lname = implode(" ", array_slice($name, 1));
                                 <h2>TÀI KHOẢN CỦA TÔI</h2>
                             </div>
                             <div class="order-block my-account-wrapper row">
-                                <p class="alert alert-primary">"Vì chính sách an toàn thẻ, bạn không thể thay đổi SĐT, Ngày sinh, Họ tên. Vui lòng liên hệ CSKH 0905898683 để được hỗ trợ"</p>
+                                <p class="alert alert-primary">"Vì chính sách an toàn thẻ, bạn không thể thay đổi SĐT, Họ tên. Vui lòng liên hệ CSKH 0123456789 để được hỗ trợ"</p>
                                 <div class="col-md-6">
                                     <form enctype="application/x-www-form-urlencoded" name="frm_register" method="post" action="">
                                         <div class="row form-group">
@@ -64,7 +71,7 @@ $lname = implode(" ", array_slice($name, 1));
                                         </div>
                                         <div class="row form-group">
                                             <div class="col col-label">
-                                                <label>Email</label>
+                                                <label>Address</label>
                                             </div>
                                             <div class="col col-input has-button">
                                                 <input class="form-control" type="text" value="<?php echo $profile['address']?>" id="customer_address" name="customer_email">

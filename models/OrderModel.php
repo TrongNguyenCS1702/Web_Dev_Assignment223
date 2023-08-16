@@ -23,13 +23,7 @@ class OrderModel
         }
     }
 
-    public function addOrderItem($orderId, $productId, $quantity)
-    {
-        $query = "INSERT INTO OrderItems (order_id, product_id, quantity) VALUES (?, ?, ?)";
-        $params = [$orderId, $productId, $quantity];
-
-        return $this->db->execute($query, $params);
-    }
+    
 
     public function getOrdersByUserId($userId)
     {

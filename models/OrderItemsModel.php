@@ -25,4 +25,11 @@ class OrderItemsModel
         $query = "SELECT * FROM OrderItems WHERE order_id = ?";
         return $this->db->fetchAll($query, [$order_id]);
     }
+    public function addOrderItem($orderId, $productId, $quantity)
+    {
+        $query = "INSERT INTO OrderItems (order_id, product_id, quantity) VALUES (?, ?, ?)";
+        $params = [$orderId, $productId, $quantity];
+
+        return $this->db->execute($query, $params);
+    }
 }

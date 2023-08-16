@@ -1,25 +1,28 @@
-<?php
-if (!(isset($_SESSION['role']) && $_SESSION['role'] == "user")) {
-  $_SESSION['old_url'] = $_SERVER['REQUEST_URI'];
-  echo '<script>';
-  echo 'alert("Bạn cần phải đăng nhập trước");';
-  echo 'window.location.href = "index.php?action=user_login";';
-  echo '</script>';
-}
-?>
+
+
 <!DOCTYPE html>
 <html>
 
 <head>
-  <title>Giỏ hàng</title>
-
+  <title>Thanh toán</title>
+  <link rel="icon" href="https://pubcdn.ivymoda.com/ivy2/images/logo-icon.ico" type="image/png" sizes="16x16">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
   <link rel="stylesheet" href="views/Pages/PHP/user/payment/pay.css">
 </head>
 
 <body>
+<div id="showSuccessPopup"></div> 
   <?php include 'views/Component/header/header.php'; ?>
+  <?php
+if (!(isset($_SESSION['role']))) {
+  $_SESSION['old_url'] = $_SERVER['REQUEST_URI'];
+  echo '<script>';
+  echo 'showNotifyPopup("Bạn cần phải đăng nhập","index.php?action=user_login")';
+  echo '</script>';
+}
+?>
+  
   <main id="main" class="site-main">
     <div class="container">
       <div class="cart pt-40 checkout">

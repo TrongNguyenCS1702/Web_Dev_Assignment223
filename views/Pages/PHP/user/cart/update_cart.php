@@ -17,9 +17,7 @@ if (isset($_POST['id']) && isset($_POST['type']) && isset($_POST['price']) ) {
         $_SESSION['sum_qty']-=1;
         $_SESSION['sum_price']-=$price;
         if ($_SESSION['cart'][$id]['quantity']==0)
-            unset($_SESSION['cart'][$id]);
-        if ( $_SESSION['sum_qty']==0)
-        unset( $_SESSION['sum_qty']);
+            unset($_SESSION['cart'][$id]);     
          echo  $_SESSION['cart'][$id]['quantity'];
     }
   }

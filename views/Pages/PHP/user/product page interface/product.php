@@ -1,13 +1,22 @@
+
+<?php
+if(isset($_GET['id'])){
+  $id = $_GET['id'];
+  $product = $userController->getProductById($id);
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" href="https://pubcdn.ivymoda.com/ivy2/images/logo-icon.ico" type="image/png" sizes="16x16">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
   <link rel="stylesheet" href="views/Pages/PHP/user/product page interface/product.css">
-  <title>Ivy</title>
+  <title><?php echo $product['name']; ?></title>
   <?php include 'views/Component/header/header.php';?>
 </head>
 <body>
@@ -16,31 +25,19 @@
 <div class="container">
   <section class="product">
     <div class="container">
-      <div class="product-top row">
-      <div class="product-top row">
-        <ol class="product-list">
-          <li class="product-item">
-            <a href="">Trang chủ</a>
-            <i class="fas fa-arrow-right" style="padding: 10px 10px;"></i>
-          </li>
-          <li class="product-item">
-            <a href="">Nam</a>
-            <i class="fas fa-arrow-right" style="padding: 10px 10px;"></i>
-          </li>
-          <li class="product-item">
-            <a href="">Áo</a>
-            <i class="fas fa-arrow-right" style="padding: 10px 10px;"></i>
-          </li>
-          <li class="product-item"><a href="">Áo sơ mi</a></li>
-        </ol>
-      </div>
+    <div class="container mt-4">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb" style="text-decoration:none">
+            <li class="breadcrumb-item"><a href="index.php?action=user_homepage" style="text-decoration:none">Trang chủ</a></li>
+            <?php echo '<li class="breadcrumb-item"><a href="index.php?action=products&type='.$product['type_name'].'" style="text-decoration:none">'.$product['type_name'].'</a></li>' ?>
+            <?php echo '<li class="breadcrumb-item"><a href="index.php?action=products&type='.$product['type_name'].'&category='.$product['category_name'].'" style="text-decoration:none">'.$product['category_name'].'</a></li>'  ?>
+            <?php echo '<li class="breadcrumb-item"><a href="index.php?action=products&type='.$product['type_name'].'&category='.$product['category_name'].'&figure='.$product['figure_name'].'" style="text-decoration:none">'.$product['figure_name'].'</a></li>'  ?>
+            <?php echo '<li class="breadcrumb-item active" aria-current="page">'.$product['name'].'</li>' ?>
+          </ol>
+        </nav>
       </div>
       <?php 
-      if(isset($_GET['id'])){
-        $id = $_GET['id'];
-        $productModel = new ProductModel();
-        $product = $productModel->getProductById($id);
-      }
+      
       echo '
       <div class="product-content">
         <div class="product-content-left">
@@ -58,10 +55,6 @@
           <div class="product-content-right-product-name">
             <p class="price">'.number_format($product['price'], 0, '.', ',').' <sup>đ</sup></p>
           </div>
-          <div class="quantity">
-            <p style="font-weight: bold;">Số lượng:</p>
-            <input class="qty" type="number" min="0" value="1">
-          </div>
           <div class="row ">
             <div type="button" onclick="add(';
             echo  $product['id'].','.$product['price'].",'";
@@ -74,8 +67,12 @@
                     </div>
           </div>
           <div class="col-md-6 product-content-right-product-button" style="margin-top:24px;" >
-            <a  class="custom-button" style="width:100%;height:100%;text-align:center;display:flex;justify-content:space-between"><div style="display:flex;align-items:center"><i class="fa-solid fa-cart-shopping"></i></div>MUA HÀNG</a>
-          </div>
+           <div onclick="add(';
+            echo  $product['id'].','.$product['price'].",'";
+            echo $product['name']."','";
+            echo $product['image_url']."')";
+            echo '" > <a href="index.php?action=cart"  class="custom-button" style="width:100%;height:100%;text-align:center;display:flex;justify-content:space-between"><div style="display:flex;align-items:center"><i class="fa-solid fa-cart-shopping"></i></div>MUA HÀNG</a>
+          </div></div>
           </div>
           <div class="product-content-right-bottom">
             <div class="product-content-right-bottom-content-big">
@@ -142,15 +139,15 @@
       <p>SẢN PHẨM LIÊN QUAN</p>
     </div>
     <?php 
-    $product_lq = $productModel->getProductByFigure($product['figure_id']);
+    $product_lq = $userController->getProductByFigure($product['figure_id']);
    
    echo '<div class="row product-content">';
    foreach ($product_lq as $product1)
    echo'
       <div class="col-md-3 product-related-item">
-        <img src="'.$product1['image_url'].'" alt="" >
-        <h1>'.$product1['name'].'</h1>
-        <p>'.number_format($product['price'], 0, '.', ',').'<sup>đ</sup></p>
+      <a href="index.php?action=product&id='.$product1['id'].'"><img src="'.$product1['image_url'].'" alt="" ></a>
+      <a href="index.php?action=product&id='.$product1['id'].'" style="text-decoration:none"><h1>'.$product1['name'].'</h1></a>
+        <p>'.number_format($product1['price'], 0, '.', ',').'<sup>đ</sup></p>
       </div>';
       
     echo '</div>' ;

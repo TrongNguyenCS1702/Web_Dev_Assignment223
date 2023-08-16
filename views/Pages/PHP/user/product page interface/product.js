@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 function add(id,price,name,img) {
-  console.log('a');
+
 
   // Gửi số lượng lên máy chủ bằng AJAX (không bắt buộc)
   $.ajax({

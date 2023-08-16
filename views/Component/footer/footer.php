@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
   <script src="views/Component/footer/footer.js"></script>
   <link rel="stylesheet" href="views/Component/footer/footer.css">
-  <title>Ivy</title>
 </head>
 <body>
 

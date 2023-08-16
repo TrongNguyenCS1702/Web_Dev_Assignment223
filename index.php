@@ -248,6 +248,15 @@ if (isset($_SESSION['role'])) {
         if ($action == "profile") {
             include 'views/Pages/PHP/user/profile/profile.php';
         }
+        if ($action == "update_info") {
+            include 'views/Pages/PHP/user/profile/update_info.php';
+        }
+        if ($action == "change_password") {
+            include 'views/Pages/PHP/user/profile/change_password.php';
+        }
+        if ($action == "filter") {
+            include 'views/Pages/PHP/user/delivery/price_filter.php';
+        }
     }
 }
 // echo print_r($_SESSION);
@@ -278,6 +287,10 @@ elseif ($action == "user_homepage") {
     include 'views/Pages/PHP/user/Home/home.php';
 }elseif ($action == "pay") {
     include 'views/Pages/PHP/user/payment/pay.php';
+}elseif ($action == "profile") {
+    include 'views/Pages/PHP/user/profile/profile.php';
+}elseif ($action == "filter") {
+    include 'views/Pages/PHP/user/delivery/price_filter.php';
 }else {
     // If the requested action is not found, show a 404 page
     header("HTTP/1.0 404 Not Found");

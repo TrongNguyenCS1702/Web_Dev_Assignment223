@@ -7,7 +7,7 @@ function addVoucher() {
       data: { voucher: voucherInput },
       success: function(response) {
           if (response) {
-
+            alert("Thêm Voucher thành công");
             } else {
               alert("Voucher không hợp lệ");
             }

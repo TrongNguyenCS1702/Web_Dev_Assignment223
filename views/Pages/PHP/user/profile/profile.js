@@ -19,17 +19,36 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    var update = document.getElementById('#update');
+    var update = document.querySelector('#update');
     update.addEventListener("click", function () {
-        var email = document.getElementById('#customer_email');
-        var addres = document.getElementById('#customer_address');
+        var email = document.getElementById('customer_email').value;
+        var address = document.getElementById('customer_address').value;
         $.ajax({
-            url: "views/Pages/PHP/user/profile/update_info.php", 
+            url: "index.php?action=update_info", 
             type: "POST",
-            data: { email: email,addres:addres },
+            data: { email: email,address:address },
             success: function(response) {
-                alert('Cập nhật thông tin thành công')
+                alert(response)
             }
           });
+    });
+    var changePass = document.querySelector('#change_pass');
+    changePass.addEventListener("click", function () {
+        var oldpassword = document.getElementById('customer_pass_old').value;
+        var newpassword1 = document.getElementById('customer_pass_new1').value;
+        var newpassword2 = document.getElementById('customer_pass_new2').value;
+        if(newpassword1 !== newpassword2){
+            alert("Nhập lại mật khẩu không chính xác");
+        }else{
+            $.ajax({
+                url: "index.php?action=change_password", 
+                type: "POST",
+                data: { old_password: oldpassword,new_password:newpassword1 },
+                success: function(response) {
+                    alert(response)
+                    location.reload();
+                }
+            });
+        }
     });
 });

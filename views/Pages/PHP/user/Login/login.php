@@ -1,41 +1,21 @@
 
-<?php 
-    // include 'controllers/UserController.php';
-    $base_url = "http://localhost/Web_Dev_Assignment223"; // Replace with your URL
-    $user = new UserController();
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $login_result = $user->loginUser($username,$password);
-        if( $login_result == "Login successful."){
-            echo '<script>';
-            echo 'alert("' . $login_result . '");';
-            if(isset($_SESSION['old_url']))
-              echo 'window.location.href = "http://localhost' . $_SESSION['old_url']. '";';
-            else
-              echo 'window.location.href = "' . $base_url . '/index.php?action=user_homepage";';
-            echo '</script>';
-            unset($_SESSION['old_url']);
-        }else{
-            echo '<script>alert("'.$login_result.'")</script>';
-        }
-    }
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://pubcdn.ivymoda.com/ivy2/images/logo-icon.ico" type="image/png" sizes="16x16">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="views/Pages/PHP/user/Login/login.css">
-    <title>Ivy</title>
+    <title>Đăng nhập</title>
   </head>
   <body>
   <?php include 'views/Component/header/header.php';?>
   <div class="container">
+    <div id="showSuccessPopup"></div>
     <div class="auth-container">
       <div class="auth-row">
         <div class="auth__login auth__block">
@@ -87,3 +67,27 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
+<?php 
+    // include 'controllers/UserController.php';
+    $base_url = "http://localhost/Web_Dev_Assignment223"; // Replace with your URL
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $login_result = $userController->loginUser($username,$password);
+        if( $login_result == "Đăng nhập thành công."){
+            echo '<script>';
+            if (isset($_SESSION['old_url']))
+              echo 'showSuccessPopup( "Đăng nhập thành công.","http://localhost'.$_SESSION['old_url'].'")';
+            else
+              echo 'showSuccessPopup("Đăng nhập thành công.","index.php?action=user_homepage")';
+
+            echo '</script>';
+            unset($_SESSION['old_url']);
+        }else{
+            echo '<script>showPopup("'.$login_result.'")</script>';
+        }
+    }
+
+?>

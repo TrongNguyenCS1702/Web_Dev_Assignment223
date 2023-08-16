@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_POST['id']) && isset($_POST['img']) && isset($_POST['name']) && isset($_POST['price']) ) {
+if (isset($_POST['id']) && isset($_POST['img']) && isset($_POST['name']) && isset($_POST['price'])    ) {
   $id = $_POST['id'];
   $img = $_POST['img'];
   $name = $_POST['name'];
