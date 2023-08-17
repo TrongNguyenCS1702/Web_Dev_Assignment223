@@ -1,15 +1,15 @@
-<?php include '../../Component/header/header.php';?>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <link rel="stylesheet" href="login.css">
-    <title>Ivy</title>
-  </head>
-  <body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+		<link rel="stylesheet" href="login.css">
+		<title>Ivy</title>
+	</head>
+	<body>
+	  <?php include '../../Component/header/header.php';?>
   <div class="container">
     <div class="auth-container">
       <div class="auth-row">
@@ -61,7 +61,7 @@
 				<div class="top-left">
 					<div class="logo-footer">
 						<a href="#">
-							<img src="https://pubcdn.ivymoda.com/ivy2/images/logo-footer.png" alt="logo-footer">
+						<img src="/View/Component/footer/img/lgo1.png" alt="logo-footer">
 						</a>
 					</div>
 					<a href="#" target="_blank" title="DMCA.com Protection Status" class="dmca-badge">
