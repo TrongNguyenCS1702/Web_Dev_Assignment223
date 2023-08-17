@@ -184,7 +184,7 @@ header {
   <div class="container">
     <header id="header">  
       <div class="logo">
-        <a href="views/Pages/PHP/user/Home/home.php"><img src="views/Component/images/logo.png" alt="logo"></a>
+        <a href="views/Pages/PHP/user/Home/home.php"><img src="/views/Component/images/logo.png" alt="logo"></a>
       </div>
       <div class="menu">
         <li><a href="index.php?action=products&type=Nữ">NỮ</a>

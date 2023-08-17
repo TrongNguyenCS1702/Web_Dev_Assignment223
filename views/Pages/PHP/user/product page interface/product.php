@@ -165,7 +165,7 @@ if(isset($_GET['id'])){
 				<div class="top-left">
 					<div class="logo-footer">
 						<a href="#">
-							<img src="https://pubcdn.ivymoda.com/ivy2/images/logo-footer.png" alt="logo-footer">
+            <img src="/views/Component/images/logo.png" alt="logo-footer">
 						</a>
 					</div>
 					<a href="#" target="_blank" title="DMCA.com Protection Status" class="dmca-badge">
