@@ -118,7 +118,7 @@ $lname = implode(" ", array_slice($name, 1));
 				<div class="top-left">
 					<div class="logo-footer">
 						<a href="#">
-                        <img src="/views/Component/images/logo.png" alt="logo-footer">
+                        <img src="views/Component/images/logo.png" alt="logo-footer">
 						</a>
 					</div>
 					<a href="#" target="_blank" title="DMCA.com Protection Status" class="dmca-badge">
